@@ -1,0 +1,30 @@
+{
+  "name": "taiwan-ui",
+  "version": "0.1.0",
+  "description": "CLI to add Taiwan-specific UI components to your project. Follows the shadcn/ui model — copies source code into your repo.",
+  "bin": {
+    "taiwan-ui": "./bin/taiwan-ui.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "taiwan",
+    "ui",
+    "components",
+    "roc",
+    "民國",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taiwan-ui/taiwan-ui"
+  },
+  "homepage": "https://taiwan-ui.vercel.app"
+}
