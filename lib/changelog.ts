@@ -11,64 +11,28 @@ export interface ChangelogEntry {
   }[];
 }
 
+/**
+ * Reflects what actually landed in this repo. Version history will accrue
+ * from here on real releases — no back-dated entries.
+ */
 export const CHANGELOG: ChangelogEntry[] = [
   {
-    version: "0.4.0",
-    date: "2026-04-15",
-    type: "minor",
-    zhTitle: "開發者平台",
-    title: "Developer platform",
-    changes: [
-      { type: "added", zhDescription: "Registry API — GET /api/registry 與 /api/registry/[slug]，供 CLI 與第三方整合", description: "Registry API exposing GET /api/registry and GET /api/registry/[slug] with embedded source code" },
-      { type: "added", zhDescription: "`taiwan-ui` CLI — `add`、`list`、`init` 指令（零依賴）", description: "`taiwan-ui` CLI with add/list/init commands, zero deps, shadcn-style source copy" },
-      { type: "added", zhDescription: "互動式 Playground — 自動根據 props 型別產生控制項與程式碼", description: "Interactive Playground — auto-generated controls from prop types + live code snippet" },
-      { type: "added", zhDescription: "/components 頁面支援 URL 查詢參數同步、排序選項", description: "Browse page now syncs filters to URL (?q, ?category, ?status, ?sort)" },
-      { type: "added", zhDescription: "變更日誌、貢獻指南、元件提交表單頁面", description: "Changelog, contributing, and submission pages" },
-      { type: "added", zhDescription: "Vercel Analytics 整合", description: "Integrated Vercel Analytics for privacy-friendly page metrics" },
-    ],
-  },
-  {
-    version: "0.3.0",
-    date: "2026-04-10",
-    type: "minor",
-    zhTitle: "台灣特化元件擴充",
-    title: "Taiwan-specific component expansion",
-    changes: [
-      { type: "added", zhDescription: "CompanyTaxIDInput — 統一編號 MOF 驗證", description: "CompanyTaxIDInput with MOF checksum algorithm" },
-      { type: "added", zhDescription: "PhoneBarcodeInput — 手機條碼載具格式驗證", description: "PhoneBarcodeInput for e-invoice mobile barcode" },
-      { type: "added", zhDescription: "TWPhoneInput — 行動/市話自動識別與區碼偵測", description: "TWPhoneInput with mobile/landline auto-detect" },
-      { type: "added", zhDescription: "LicensePlateInput — 新式/舊式/機車車牌格式", description: "LicensePlateInput supporting new/old/motorcycle formats" },
-      { type: "added", zhDescription: "NHICardInput — 健保卡號格式驗證", description: "NHICardInput for National Health Insurance card" },
-      { type: "added", zhDescription: "BankAccountInput — 銀行/分行/帳號三段輸入", description: "BankAccountInput with bank directory and 3-field structure" },
-      { type: "added", zhDescription: "eGUIInvoice — 電子發票顯示元件", description: "eGUIInvoice display component with items/total" },
-    ],
-  },
-  {
-    version: "0.2.0",
-    date: "2026-04-05",
-    type: "minor",
-    zhTitle: "平台基礎建設",
-    title: "Platform foundation",
-    changes: [
-      { type: "added", zhDescription: "元件詳情頁（/components/[slug]）含 props 表、程式範例、相關元件", description: "Individual component pages with props table, code examples, related components" },
-      { type: "added", zhDescription: "元件瀏覽與搜尋頁（/components）", description: "Browse & search page at /components with category/status filters" },
-      { type: "added", zhDescription: "Registry 資料層（lib/registry.ts）", description: "Registry data layer as single source of truth" },
-      { type: "added", zhDescription: "完整安全標頭（CSP、HSTS、X-Frame-Options 等）", description: "Full security header suite (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy)" },
-      { type: "added", zhDescription: "npm 套件骨架（@taiwan-ui/react）", description: "npm package scaffolding for @taiwan-ui/react with tree-shakeable exports" },
-    ],
-  },
-  {
     version: "0.1.0",
-    date: "2026-03-28",
+    date: "2026-04-15",
     type: "major",
-    zhTitle: "首次發布",
-    title: "Initial release",
+    zhTitle: "首次公開發布",
+    title: "Initial public release",
     changes: [
-      { type: "added", zhDescription: "ROCDatePicker — 民國/西元雙曆日期選擇器", description: "ROCDatePicker with Minguo/Gregorian dual calendar" },
-      { type: "added", zhDescription: "TWIDInput — 身分證/居留證 checksum 驗證", description: "TWIDInput with real-time TWID and ARC checksum validation" },
-      { type: "added", zhDescription: "TaiwanAddressInput — 縣市/郵遞區號三段式地址", description: "TaiwanAddressInput with county/district/postal code cascading" },
-      { type: "added", zhDescription: "TaiwanPaymentButton — LINE Pay / JKO Pay 按鈕", description: "TaiwanPaymentButton for LINE Pay and JKO Pay" },
-      { type: "added", zhDescription: "UniformInvoiceInput — 統一發票號碼格式化輸入", description: "UniformInvoiceInput for unified invoice number entry" },
+      { type: "added", zhDescription: "12 個台灣在地化元件：民國日期、身分證/居留證、地址、電子支付、統一發票、統編、手機條碼載具、電話、車牌、健保卡、銀行帳號、電子發票顯示", description: "12 Taiwan-specific components covering ROC date, TWID/ARC, address, e-payment, invoice, tax ID, phone barcode, phone, license plate, NHI card, bank account, eGUI display" },
+      { type: "added", zhDescription: "7 個純函式驗證器於 lib/validators/，共 114 筆 vitest 測試", description: "7 pure-function validators in lib/validators/ with 114 passing vitest tests against published specs" },
+      { type: "added", zhDescription: "元件瀏覽與詳情頁（/components、/components/[slug]）含 props 表、程式範例、互動式 Playground", description: "Browse and detail pages with props tables, code examples, and interactive Playground" },
+      { type: "added", zhDescription: "Registry API（/api/registry、/api/registry/[slug]）與 `taiwan-ui` CLI 骨架", description: "Registry API endpoints and `taiwan-ui` CLI source (npm publish pending)" },
+      { type: "added", zhDescription: "完整安全標頭：CSP、HSTS、X-Frame-Options、Referrer-Policy、Permissions-Policy", description: "Full security header suite: CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy" },
+      { type: "added", zhDescription: "提交元件 API（/api/submit）含可插拔速率限制（Upstash/Vercel KV 或記憶體 fallback）", description: "Submission endpoint with pluggable rate limiter (Upstash / Vercel KV, memory fallback)" },
+      { type: "added", zhDescription: "隱私權、使用條款、資安政策頁面與 SECURITY.md 揭露流程", description: "Privacy, Terms, Security pages and SECURITY.md disclosure policy" },
+      { type: "added", zhDescription: "GitHub Actions CI（typecheck + test + build + npm audit）", description: "GitHub Actions CI running typecheck, tests, build, and npm audit on every PR" },
+      { type: "added", zhDescription: "sitemap.xml、robots.txt、Vercel Analytics", description: "sitemap.xml, robots.txt, Vercel Analytics" },
+      { type: "added", zhDescription: "GOVT_READINESS.md — 誠實的政府就緒度自評", description: "GOVT_READINESS.md — honest self-assessment of what separates this from a procurement-grade deliverable" },
     ],
   },
 ];

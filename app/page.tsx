@@ -147,7 +147,7 @@ export default function LandingPage() {
           <div className="animate-fade-in-up opacity-0 animate-delay-400 grid grid-cols-4 gap-4 max-w-lg mx-auto mt-16">
             {[
               { v: "12", l: "元件" },
-              { v: "0", l: "依賴" },
+              { v: "零", l: "外部依賴" },
               { v: "22", l: "縣市" },
               { v: "368+", l: "鄉鎮區" },
             ].map((s) => (

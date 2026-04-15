@@ -2,25 +2,21 @@
 
 The canonical, always-current changelog lives in `lib/changelog.ts` and is rendered at https://taiwan-ui.vercel.app/changelog.
 
-## [0.4.0] — 2026-04-15 — Developer platform
+Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions follow [SemVer](https://semver.org/).
 
-- **Added** Registry API (`/api/registry`, `/api/registry/[slug]`)
-- **Added** `taiwan-ui` CLI (`add`, `list`, `init`) — zero deps, shadcn-style source copy
-- **Added** Interactive Playground with auto-generated prop controls
-- **Added** URL query-param sync on /components (q, category, status, sort)
-- **Added** Changelog, contributing, and submission pages
-- **Added** Vercel Analytics
+## [0.1.0] — 2026-04-15 — Initial public release
 
-## [0.3.0] — 2026-04-10 — Taiwan-specific component expansion
+### Added
 
-- **Added** 7 components: CompanyTaxIDInput, PhoneBarcodeInput, TWPhoneInput, LicensePlateInput, NHICardInput, BankAccountInput, eGUIInvoice
+- 12 Taiwan-specific components (ROCDatePicker, TWIDInput, TaiwanAddressInput, TaiwanPaymentButton, UniformInvoiceInput, CompanyTaxIDInput, PhoneBarcodeInput, TWPhoneInput, LicensePlateInput, NHICardInput, BankAccountInput, eGUIInvoice)
+- 7 pure-function validators in `lib/validators/` with 114 passing vitest tests against published specs (戶政司, 財政部, NCC, 公路總局)
+- Component browse and detail pages (`/components`, `/components/[slug]`) with props tables, code examples, and interactive Playground
+- Registry API (`/api/registry`, `/api/registry/[slug]`) and `taiwan-ui` CLI source (npm publish pending)
+- Full security header suite: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- Submission endpoint (`/api/submit`) with pluggable rate limiter (Upstash / Vercel KV, memory fallback)
+- Privacy, Terms, Security pages and `SECURITY.md` disclosure policy
+- GitHub Actions CI running typecheck, tests, build, and `npm audit --audit-level=high`
+- sitemap.xml, robots.txt, Vercel Analytics
+- `GOVT_READINESS.md` — honest self-assessment of what separates this from a procurement-grade deliverable
 
-## [0.2.0] — 2026-04-05 — Platform foundation
-
-- **Added** Component detail pages, browse & search, registry data layer
-- **Added** Full security header suite (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy)
-- **Added** npm package scaffolding for `@taiwan-ui/react`
-
-## [0.1.0] — 2026-03-28 — Initial release
-
-- **Added** ROCDatePicker, TWIDInput, TaiwanAddressInput, TaiwanPaymentButton, UniformInvoiceInput
+[0.1.0]: https://github.com/LawrenceKuok/taiwan-ui/releases/tag/v0.1.0
