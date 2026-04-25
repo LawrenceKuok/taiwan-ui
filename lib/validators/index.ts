@@ -19,3 +19,5 @@ export * from "./license-plate";
 export * from "./nhi-card";
 export * from "./uniform-invoice";
 export * from "./phone-barcode";
+export * from "./passport";
+export * from "./driving-license";

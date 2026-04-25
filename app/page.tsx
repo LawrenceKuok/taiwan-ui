@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import TryItNow from "@/components/TryItNow";
 import ROCDatePicker, { type ROCDate } from "@/components/taiwan/ROCDatePicker";
 import TWIDInput from "@/components/taiwan/TWIDInput";
 import TaiwanAddressInput, { type TaiwanAddress } from "@/components/taiwan/TaiwanAddressInput";
@@ -85,12 +86,11 @@ const COMPONENTS = [
 ];
 
 const ROADMAP = [
-  { name: "eGUI 電子發票 API", status: "規劃中" },
-  { name: "健保卡驗證元件", status: "規劃中" },
-  { name: "手機條碼載具輸入", status: "規劃中" },
+  { name: "eGUI 電子發票 API 串接", status: "規劃中" },
   { name: "自然人憑證整合", status: "評估中" },
   { name: "Taiwan FidO 身分驗證", status: "評估中" },
-  { name: "公司統編驗證", status: "規劃中" },
+  { name: "金融卡 / 信用卡格式 (六大行庫)", status: "規劃中" },
+  { name: "GOVT_READINESS 1.0 自評再審", status: "規劃中" },
 ];
 
 /* ─── Page ─────────────────────────────────────────────────────────── */
@@ -146,10 +146,10 @@ export default function LandingPage() {
           {/* Stats */}
           <div className="animate-fade-in-up opacity-0 animate-delay-400 grid grid-cols-4 gap-4 max-w-lg mx-auto mt-16">
             {[
+              { v: "9", l: "校驗器" },
               { v: "12", l: "元件" },
-              { v: "零", l: "外部依賴" },
-              { v: "22", l: "縣市" },
-              { v: "368+", l: "鄉鎮區" },
+              { v: "128", l: "單元測試" },
+              { v: "0", l: "外部依賴" },
             ].map((s) => (
               <div key={s.l} className="text-center">
                 <p className="text-xl sm:text-2xl font-bold text-blue-400">{s.v}</p>
@@ -159,6 +159,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Try It Now interactive widget ── */}
+      <TryItNow />
 
       {/* ── Why section ── */}
       <section className="border-t border-[var(--card-border)]">
