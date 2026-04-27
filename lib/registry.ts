@@ -6,7 +6,8 @@ export type ComponentCategory =
   | "invoice"
   | "telecom"
   | "finance"
-  | "vehicle";
+  | "vehicle"
+  | "map";
 
 export type ComponentStatus = "stable" | "beta" | "planned";
 
@@ -293,6 +294,118 @@ export const REGISTRY: ComponentMeta[] = [
     dependencies: [],
     status: "stable",
   },
+  {
+    slug: "taiwan-map",
+    name: "TaiwanMap",
+    zhName: "台灣縣市地圖",
+    description:
+      "Stylised SVG selector for Taiwan's 22 counties/cities + 3 outlying island groups. Click-to-select, choropleth-ready, fully keyboard accessible.",
+    zhDescription:
+      "22 縣市加 3 大離島群島的可點選 SVG 地圖，支援單/多選、自訂色彩、鍵盤導覽。",
+    category: "map",
+    tags: ["地圖", "縣市選擇", "data-viz", "SVG", "choropleth"],
+    props: [
+      { name: "value", type: "TaiwanCountyCode | TaiwanCountyCode[] | null", required: false, description: "Selected county code(s)", zhDescription: "已選縣市代碼" },
+      { name: "onSelect", type: "(code: TaiwanCountyCode, county: TaiwanCounty) => void", required: false, description: "Selection callback", zhDescription: "選取回呼" },
+      { name: "colorize", type: "(code: TaiwanCountyCode) => string | undefined", required: false, description: "Per-county color override for choropleth maps", zhDescription: "依縣市自訂顏色" },
+      { name: "showLabels", type: "boolean", default: "true", required: false, description: "Show county labels on tiles", zhDescription: "顯示縣市標籤" },
+      { name: "english", type: "boolean", default: "false", required: false, description: "Use English county names", zhDescription: "顯示英文縣市名" },
+      { name: "highlightColor", type: "string", default: '"rgb(59,130,246)"', required: false, description: "Selected tile color", zhDescription: "選中縣市顏色" },
+      { name: "disabled", type: "boolean", default: "false", required: false, description: "Read-only mode", zhDescription: "唯讀模式" },
+      { name: "width", type: "number", default: "360", required: false, description: "Map width in pixels", zhDescription: "地圖寬度" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanMap/index.tsx",
+    dependencies: [],
+    status: "stable",
+  },
+  {
+    slug: "payment-method-picker",
+    name: "PaymentMethodPicker",
+    zhName: "支付方式選擇器",
+    description:
+      "Multi-provider payment-method radio group covering Taiwan e-wallets (LINE Pay, 街口, 全支付, 悠遊付, iCash) plus Apple/Google/Samsung Pay, credit card, ATM, and convenience-store payment.",
+    zhDescription:
+      "涵蓋台灣主要電子錢包（LINE Pay、街口、全支付、悠遊付、iCash）、行動支付（Apple/Google/Samsung Pay）、信用卡、ATM、超商代收的單選元件。",
+    category: "payment",
+    tags: ["LINE Pay", "街口支付", "全支付", "Apple Pay", "11 providers"],
+    props: [
+      { name: "value", type: "PaymentMethodId | null", required: true, description: "Selected method id", zhDescription: "已選支付方式" },
+      { name: "onChange", type: "(id: PaymentMethodId) => void", required: true, description: "Selection callback", zhDescription: "選取回呼" },
+      { name: "methods", type: "PaymentMethodId[]", required: false, description: "Subset of methods to show; defaults to a sensible Taiwan set", zhDescription: "要顯示的支付方式子集" },
+      { name: "english", type: "boolean", default: "false", required: false, description: "Use English labels", zhDescription: "顯示英文標籤" },
+      { name: "variant", type: '"grid" | "list"', default: '"grid"', required: false, description: "Display variant", zhDescription: "顯示變體" },
+      { name: "disabled", type: "boolean", default: "false", required: false, description: "Disable selection", zhDescription: "停用選取" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/PaymentMethodPicker/index.tsx",
+    dependencies: [],
+    status: "stable",
+  },
+  {
+    slug: "taiwan-holiday-badge",
+    name: "TaiwanHolidayBadge",
+    zhName: "台灣國定假日標籤",
+    description:
+      "Renders a coloured badge if a given date is a Taiwan public holiday per 行政院人事行政總處 (DGPA) calendar. National / lunar / adjusted holidays each get a distinct tone. Quietly renders nothing for non-holiday dates.",
+    zhDescription:
+      "依行政院人事行政總處公告日曆，標示國定/農曆/彈性假日，並以不同色調區分。非假日不顯示。資料涵蓋 2025–2026。",
+    category: "date",
+    tags: ["國定假日", "農曆假日", "DGPA", "行政院"],
+    props: [
+      { name: "date", type: "Date | string", required: true, description: "Date to check (Date object or YYYY-MM-DD string)", zhDescription: "要檢查的日期" },
+      { name: "english", type: "boolean", default: "false", required: false, description: "Use English holiday name", zhDescription: "使用英文假日名" },
+      { name: "size", type: '"sm" | "md"', default: '"md"', required: false, description: "Badge size", zhDescription: "標籤尺寸" },
+      { name: "fallback", type: "React.ReactNode", required: false, description: "What to render when not a holiday (default: nothing)", zhDescription: "非假日時的替代內容" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanHolidayBadge/index.tsx",
+    dependencies: ["data/taiwan-holidays.json"],
+    status: "stable",
+  },
+  {
+    slug: "roc-lunar-calendar",
+    name: "ROCLunarCalendar",
+    zhName: "民國農曆資訊卡",
+    description:
+      "Shows for any Gregorian date: ROC year (民國), sexagenary cycle (天干地支), zodiac animal (生肖), and lunar festival name (春節, 元宵, 端午, 中秋, 七夕, 重陽). Festival data verified for 2024–2030.",
+    zhDescription:
+      "顯示任意西元日期對應的民國年、天干地支、生肖、農曆節日（春節、元宵、端午、中秋、七夕、重陽）。節日資料已驗證 2024–2030。",
+    category: "date",
+    tags: ["民國紀年", "天干地支", "生肖", "農曆節日"],
+    props: [
+      { name: "date", type: "Date | string", required: true, description: "Date to display", zhDescription: "要顯示的日期" },
+      { name: "lunarOverride", type: "string", required: false, description: "Pre-computed lunar string for non-festival days", zhDescription: "非節日日期的農曆字串" },
+      { name: "bilingual", type: "boolean", default: "false", required: false, description: "Show English alongside 中文", zhDescription: "中英對照" },
+      { name: "compact", type: "boolean", default: "false", required: false, description: "One-line compact variant", zhDescription: "單行精簡顯示" },
+      { name: "festivalOverride", type: "LunarFestival | null", required: false, description: "Override festival lookup", zhDescription: "覆寫節日查詢結果" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/ROCLunarCalendar/index.tsx",
+    dependencies: ["lib/lunar-calendar.ts"],
+    status: "beta",
+  },
+  {
+    slug: "einvoice-qr-scanner",
+    name: "EInvoiceQRScanner",
+    zhName: "電子發票 QR 掃描器",
+    description:
+      "Scans the left-side QR code of a Taiwan uniform invoice using the browser's native BarcodeDetector API. Parses the invoice number, ROC date, sales/total amounts, buyer/seller tax IDs, random code, and encryption verification code per 財政部電子發票二維條碼規格. Zero deps; camera permission required.",
+    zhDescription:
+      "使用瀏覽器原生 BarcodeDetector API 掃描台灣統一發票左側 QR Code，解析發票號碼、民國日期、金額、買/賣方統編、隨機碼、加密驗證碼。零依賴，需相機權限。",
+    category: "invoice",
+    tags: ["QR scanner", "BarcodeDetector", "電子發票", "財政部規格"],
+    props: [
+      { name: "onScan", type: "(invoice: ParsedInvoice) => void", required: true, description: "Callback with parsed invoice fields", zhDescription: "解析成功回呼" },
+      { name: "onRawScan", type: "(raw: string) => void", required: false, description: "Callback for non-invoice QR strings", zhDescription: "非發票 QR 回呼" },
+      { name: "oneShot", type: "boolean", default: "true", required: false, description: "Auto-stop after first successful scan", zhDescription: "首次掃描成功後自動停止" },
+      { name: "width", type: "number", default: "320", required: false, description: "Video preview width in pixels", zhDescription: "影像預覽寬度" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/EInvoiceQRScanner/index.tsx",
+    dependencies: [],
+    status: "beta",
+  },
 ];
 
 export const CATEGORIES: { key: ComponentCategory; label: string; zhLabel: string }[] = [
@@ -304,4 +417,5 @@ export const CATEGORIES: { key: ComponentCategory; label: string; zhLabel: strin
   { key: "telecom", label: "Telecom", zhLabel: "通訊" },
   { key: "finance", label: "Finance", zhLabel: "金融" },
   { key: "vehicle", label: "Vehicle", zhLabel: "車輛" },
+  { key: "map", label: "Map", zhLabel: "地圖" },
 ];

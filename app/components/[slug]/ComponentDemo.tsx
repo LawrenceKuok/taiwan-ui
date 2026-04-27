@@ -13,6 +13,11 @@ import LicensePlateInput, { type PlateResult } from "@/components/taiwan/License
 import NHICardInput from "@/components/taiwan/NHICardInput";
 import BankAccountInput, { type BankAccount } from "@/components/taiwan/BankAccountInput";
 import eGUIInvoice from "@/components/taiwan/eGUIInvoice";
+import TaiwanMap, { type TaiwanCountyCode, TAIWAN_COUNTIES } from "@/components/taiwan/TaiwanMap";
+import PaymentMethodPicker, { type PaymentMethodId } from "@/components/taiwan/PaymentMethodPicker";
+import TaiwanHolidayBadge from "@/components/taiwan/TaiwanHolidayBadge";
+import ROCLunarCalendar from "@/components/taiwan/ROCLunarCalendar";
+import EInvoiceQRScanner, { type ParsedInvoice } from "@/components/taiwan/EInvoiceQRScanner";
 
 function DemoROCDatePicker() {
   const [date, setDate] = useState<ROCDate | null>(null);
@@ -359,6 +364,145 @@ function DemoEGUIInvoice() {
   );
 }
 
+function DemoTaiwanMap() {
+  const [single, setSingle] = useState<TaiwanCountyCode | null>("TPE");
+  const [english, setEnglish] = useState(false);
+  const [showLabels, setShowLabels] = useState(true);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 text-xs">
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked={english} onChange={() => setEnglish(!english)} className="rounded" />
+          english
+        </label>
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked={showLabels} onChange={() => setShowLabels(!showLabels)} className="rounded" />
+          showLabels
+        </label>
+        <button
+          onClick={() => setSingle(null)}
+          className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 transition-colors"
+        >
+          Clear selection
+        </button>
+      </div>
+      <div className="flex flex-col items-center">
+        <TaiwanMap value={single} onSelect={(c) => setSingle(c)} english={english} showLabels={showLabels} width={320} />
+      </div>
+      {single && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify(TAIWAN_COUNTIES[single], null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoPaymentMethodPicker() {
+  const [method, setMethod] = useState<PaymentMethodId | null>("linepay");
+  const [variant, setVariant] = useState<"grid" | "list">("grid");
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 text-xs">
+        {(["grid", "list"] as const).map((v) => (
+          <button
+            key={v}
+            onClick={() => setVariant(v)}
+            className={`px-2 py-0.5 rounded transition-colors ${
+              variant === v ? "bg-blue-500/15 text-blue-400" : "text-[var(--muted)] hover:bg-[var(--surface)]"
+            }`}
+          >
+            variant={v}
+          </button>
+        ))}
+      </div>
+      <PaymentMethodPicker value={method} onChange={setMethod} variant={variant} />
+      {method && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify({ selected: method }, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoTaiwanHolidayBadge() {
+  const dates = ["2026-02-17", "2026-02-28", "2026-04-03", "2026-05-01", "2026-09-25", "2026-10-10", "2026-04-15"];
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-[var(--muted)]">Showing 2026 holidays + one regular workday for contrast:</p>
+      <div className="space-y-2">
+        {dates.map((d) => (
+          <div key={d} className="flex items-center gap-3 text-sm">
+            <span className="font-mono text-[var(--muted)] w-28">{d}</span>
+            <TaiwanHolidayBadge
+              date={d}
+              fallback={<span className="text-xs text-[var(--muted)] italic">— 一般日 —</span>}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DemoROCLunarCalendar() {
+  const [date, setDate] = useState<string>("2026-02-17");
+  const [bilingual, setBilingual] = useState(false);
+  const [compact, setCompact] = useState(false);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 text-xs">
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked={bilingual} onChange={() => setBilingual(!bilingual)} className="rounded" />
+          bilingual
+        </label>
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked={compact} onChange={() => setCompact(!compact)} className="rounded" />
+          compact
+        </label>
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="px-2 py-0.5 rounded bg-[var(--surface)] border border-[var(--card-border)] text-xs"
+        />
+        {["2026-02-17", "2026-06-19", "2026-09-25", "2026-10-10"].map((d) => (
+          <button
+            key={d}
+            onClick={() => setDate(d)}
+            className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 transition-colors"
+          >
+            {d}
+          </button>
+        ))}
+      </div>
+      <ROCLunarCalendar date={date} bilingual={bilingual} compact={compact} />
+    </div>
+  );
+}
+
+function DemoEInvoiceQRScanner() {
+  const [scanned, setScanned] = useState<ParsedInvoice | null>(null);
+
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        Requires camera permission. Browser must support <code className="font-mono">BarcodeDetector</code> (Chrome/Edge/Android). Point at the LEFT QR-code on a Taiwan 統一發票.
+      </p>
+      <EInvoiceQRScanner onScan={setScanned} width={280} />
+      {scanned && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify(scanned, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const DEMO_MAP: Record<string, React.ComponentType> = {
   "roc-date-picker": DemoROCDatePicker,
   "twid-input": DemoTWIDInput,
@@ -372,6 +516,11 @@ const DEMO_MAP: Record<string, React.ComponentType> = {
   "nhi-card-input": DemoNHICardInput,
   "bank-account-input": DemoBankAccountInput,
   "egui-invoice": DemoEGUIInvoice,
+  "taiwan-map": DemoTaiwanMap,
+  "payment-method-picker": DemoPaymentMethodPicker,
+  "taiwan-holiday-badge": DemoTaiwanHolidayBadge,
+  "roc-lunar-calendar": DemoROCLunarCalendar,
+  "einvoice-qr-scanner": DemoEInvoiceQRScanner,
 };
 
 export default function ComponentDemo({ slug }: { slug: string }) {

@@ -147,9 +147,9 @@ export default function LandingPage() {
           <div className="animate-fade-in-up opacity-0 animate-delay-400 grid grid-cols-4 gap-4 max-w-lg mx-auto mt-16">
             {[
               { v: "9", l: "校驗器" },
-              { v: "12", l: "元件" },
+              { v: "17", l: "元件" },
               { v: "128", l: "單元測試" },
-              { v: "0", l: "外部依賴" },
+              { v: "零", l: "外部依賴" },
             ].map((s) => (
               <div key={s.l} className="text-center">
                 <p className="text-xl sm:text-2xl font-bold text-blue-400">{s.v}</p>
