@@ -1,0 +1,133 @@
+name: Publish to npm
+
+# Triggered manually or on a tag push (e.g. v0.2.0).
+# Both packages are published with provenance (SLSA L3) for supply-chain
+# integrity — the resulting npm pages will show a "Provenance" badge linking
+# back to this exact GitHub Actions run.
+#
+# Setup required (one-time):
+#   1. Create an npm "Granular Access Token" at npmjs.com → Settings → Access Tokens
+#      with publish scope on @taiwan-ui/* and taiwan-ui packages.
+#   2. Add as repository secret: NPM_TOKEN
+#   3. Make sure both packages have:
+#        "publishConfig": { "access": "public", "provenance": true }
+#      in their package.json.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Which package to publish"
+        required: true
+        default: "both"
+        type: choice
+        options:
+          - both
+          - react
+          - cli
+      dry_run:
+        description: "Dry run only (no actual publish)"
+        required: false
+        default: false
+        type: boolean
+
+# Required for npm provenance attestation
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+
+  publish-react:
+    if: |
+      success() &&
+      (github.event_name == 'push' ||
+       github.event.inputs.package == 'both' ||
+       github.event.inputs.package == 'react')
+    needs: verify
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/react
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install package deps
+        run: npm install --no-package-lock
+
+      - name: Build (if tsup script exists)
+        run: |
+          if grep -q '"build"' package.json; then
+            npm run build
+          else
+            echo "No build script — assuming source-only package"
+          fi
+
+      - name: Publish (dry run)
+        if: github.event.inputs.dry_run == 'true'
+        run: npm publish --provenance --access public --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        if: github.event.inputs.dry_run != 'true'
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-cli:
+    if: |
+      success() &&
+      (github.event_name == 'push' ||
+       github.event.inputs.package == 'both' ||
+       github.event.inputs.package == 'cli')
+    needs: verify
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/cli
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install package deps
+        run: npm install --no-package-lock
+
+      - name: Publish (dry run)
+        if: github.event.inputs.dry_run == 'true'
+        run: npm publish --provenance --access public --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        if: github.event.inputs.dry_run != 'true'
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

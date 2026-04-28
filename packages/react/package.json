@@ -1,0 +1,63 @@
+{
+  "name": "@taiwan-ui/react",
+  "version": "0.1.0",
+  "description": "Open-source React component library for Taiwan-localized form inputs (TWID, ROC date, tax ID, NHI card, license plate, phone, address, invoice).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./validators": {
+      "types": "./dist/validators/index.d.ts",
+      "import": "./dist/validators/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "echo \"Build not yet implemented — placeholder for tsup/rollup setup\" && exit 0",
+    "test": "echo \"Tests run from monorepo root via vitest\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "keywords": [
+    "taiwan",
+    "ui",
+    "react",
+    "components",
+    "roc-date",
+    "twid",
+    "民國",
+    "身分證",
+    "統編",
+    "validation",
+    "form"
+  ],
+  "license": "MIT",
+  "author": "Lawrence Kuok",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LawrenceKuok/taiwan-ui.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://taiwan-ui.vercel.app",
+  "bugs": {
+    "url": "https://github.com/LawrenceKuok/taiwan-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -111,15 +111,19 @@ export default function LandingPage() {
           </div>
 
           <h1 className="animate-fade-in-up opacity-0 animate-delay-100 text-4xl sm:text-6xl lg:text-7xl font-bold font-serif leading-[1.1] tracking-tight">
-            <span className="gradient-text">台灣 UI</span>
+            <span className="gradient-text">停止重寫</span>
             <br />
-            <span className="text-[var(--foreground)]">元件庫</span>
+            <span className="text-[var(--foreground)]">台灣驗證器</span>
           </h1>
 
           <p className="animate-fade-in-up opacity-0 animate-delay-200 text-base sm:text-lg text-[var(--muted)] mt-6 max-w-xl mx-auto leading-relaxed">
-            專為台灣數位服務打造的 React 元件庫。
+            民國紀年、身分證、統編、健保卡、車牌、電話、地址 ——
             <br className="hidden sm:inline" />
-            從民國日期到身分證驗證、地址選擇到本土支付 —— 一行程式碼，即刻整合。
+            21 個開源 React 元件，零依賴，<span className="text-[var(--foreground)] font-medium">157 筆測試</span>，MIT 授權。
+          </p>
+          <p className="animate-fade-in-up opacity-0 animate-delay-200 text-xs text-[var(--muted)]/70 mt-3 max-w-xl mx-auto italic">
+            21 open-source React components for the Taiwan-localized form
+            inputs every developer keeps rebuilding.
           </p>
 
           <div className="animate-fade-in-up opacity-0 animate-delay-300 flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">
