@@ -18,6 +18,11 @@ import PaymentMethodPicker, { type PaymentMethodId } from "@/components/taiwan/P
 import TaiwanHolidayBadge from "@/components/taiwan/TaiwanHolidayBadge";
 import ROCLunarCalendar from "@/components/taiwan/ROCLunarCalendar";
 import EInvoiceQRScanner, { type ParsedInvoice } from "@/components/taiwan/EInvoiceQRScanner";
+import TaiwanCurrencyInput from "@/components/taiwan/TaiwanCurrencyInput";
+import ROCDateRangePicker, { type ROCDateRange } from "@/components/taiwan/ROCDateRangePicker";
+import TaxBracketCalculator from "@/components/taiwan/TaxBracketCalculator";
+import TaiwanCalendarMonth from "@/components/taiwan/TaiwanCalendarMonth";
+import { toCapitalChinese } from "@/lib/currency-tw";
 
 function DemoROCDatePicker() {
   const [date, setDate] = useState<ROCDate | null>(null);
@@ -503,6 +508,98 @@ function DemoEInvoiceQRScanner() {
   );
 }
 
+function DemoTaiwanCurrencyInput() {
+  const [amount, setAmount] = useState<number | null>(1234567);
+  const [showCapital, setShowCapital] = useState(true);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 text-xs">
+        <label className="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked={showCapital} onChange={() => setShowCapital(!showCapital)} className="rounded" />
+          showCapital
+        </label>
+        {[1, 100, 1234, 50000, 1234567, 9999999999].map((v) => (
+          <button
+            key={v}
+            onClick={() => setAmount(v)}
+            className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 transition-colors font-mono"
+          >
+            {v.toLocaleString()}
+          </button>
+        ))}
+      </div>
+      <TaiwanCurrencyInput value={amount} onChange={setAmount} showCapital={showCapital} />
+      {amount != null && amount > 0 && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify({ value: amount, capital: toCapitalChinese(amount) }, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoROCDateRangePicker() {
+  const [range, setRange] = useState<ROCDateRange>({ start: null, end: null });
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-3 text-xs">
+        <button
+          onClick={() => setRange({ start: null, end: null })}
+          className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 transition-colors"
+        >
+          Clear
+        </button>
+      </div>
+      <ROCDateRangePicker value={range} onChange={setRange} />
+      {(range.start || range.end) && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify(range, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoTaxBracketCalculator() {
+  return (
+    <div className="space-y-4">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        試算 2025 年（114 年度）個人綜合所得稅。輸入「淨所得」（已扣除免稅額與扣除額後）後，立即計算各級稅額與有效/邊際稅率。
+      </p>
+      <TaxBracketCalculator defaultIncome={1500000} />
+    </div>
+  );
+}
+
+function DemoTaiwanCalendarMonth() {
+  // Default to Feb 2026 to showcase 春節 holidays
+  const [year, setYear] = useState(2026);
+  const [month, setMonth] = useState(1);
+  const [date, setDate] = useState<Date | null>(null);
+
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        Default view: Feb 2026 (春節 + 和平紀念日 visible). Click prev/next to navigate, click any date to select.
+      </p>
+      <TaiwanCalendarMonth
+        year={year}
+        month={month}
+        value={date}
+        onSelect={setDate}
+        onMonthChange={(y, m) => { setYear(y); setMonth(m); }}
+      />
+      {date && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)]">
+          {JSON.stringify({ selected: date.toISOString().slice(0, 10), rocYear: year - 1911, month: month + 1 }, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const DEMO_MAP: Record<string, React.ComponentType> = {
   "roc-date-picker": DemoROCDatePicker,
   "twid-input": DemoTWIDInput,
@@ -521,6 +618,10 @@ const DEMO_MAP: Record<string, React.ComponentType> = {
   "taiwan-holiday-badge": DemoTaiwanHolidayBadge,
   "roc-lunar-calendar": DemoROCLunarCalendar,
   "einvoice-qr-scanner": DemoEInvoiceQRScanner,
+  "taiwan-currency-input": DemoTaiwanCurrencyInput,
+  "roc-date-range-picker": DemoROCDateRangePicker,
+  "tax-bracket-calculator": DemoTaxBracketCalculator,
+  "taiwan-calendar-month": DemoTaiwanCalendarMonth,
 };
 
 export default function ComponentDemo({ slug }: { slug: string }) {

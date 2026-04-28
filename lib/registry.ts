@@ -7,7 +7,8 @@ export type ComponentCategory =
   | "telecom"
   | "finance"
   | "vehicle"
-  | "map";
+  | "map"
+  | "tax";
 
 export type ComponentStatus = "stable" | "beta" | "planned";
 
@@ -406,6 +407,103 @@ export const REGISTRY: ComponentMeta[] = [
     dependencies: [],
     status: "beta",
   },
+  {
+    slug: "taiwan-currency-input",
+    name: "TaiwanCurrencyInput",
+    zhName: "新台幣金額輸入",
+    description:
+      "Taiwan currency input with auto comma formatting and optional 大寫中文 (capital-form Chinese) conversion required by Taiwan legal contracts, cheques, and 公文 (e.g. 1,234,567 → 壹佰貳拾參萬肆仟伍佰陸拾柒元整).",
+    zhDescription:
+      "新台幣金額輸入，自動千分位分隔，並可顯示法律文件、支票、公文要求的大寫中文金額（如：1,234,567 → 壹佰貳拾參萬肆仟伍佰陸拾柒元整）。",
+    category: "finance",
+    tags: ["大寫中文", "千分位", "公文格式", "支票"],
+    props: [
+      { name: "value", type: "number | null", required: true, description: "Current numeric value", zhDescription: "目前數值" },
+      { name: "onChange", type: "(value: number | null) => void", required: true, description: "Change callback", zhDescription: "變更回呼" },
+      { name: "showCapital", type: "boolean", default: "true", required: false, description: "Show 大寫中文 conversion", zhDescription: "顯示大寫中文" },
+      { name: "symbol", type: "string", default: '"NT$"', required: false, description: "Currency symbol prefix", zhDescription: "貨幣符號" },
+      { name: "capitalSuffix", type: '"元整" | "元" | ""', default: '"元整"', required: false, description: "Suffix for capital form", zhDescription: "大寫後綴" },
+      { name: "maxDigits", type: "number", default: "13", required: false, description: "Max digits accepted", zhDescription: "最大位數" },
+      { name: "placeholder", type: "string", default: '"0"', required: false, description: "Placeholder", zhDescription: "佔位文字" },
+      { name: "disabled", type: "boolean", default: "false", required: false, description: "Disable input", zhDescription: "停用輸入" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanCurrencyInput/index.tsx",
+    dependencies: ["lib/currency-tw.ts"],
+    status: "stable",
+  },
+  {
+    slug: "roc-date-range-picker",
+    name: "ROCDateRangePicker",
+    zhName: "民國日期範圍選擇器",
+    description:
+      "ROC (民國) date range picker — composes two ROCDatePickers with cross-field validation so the end date cannot be before the start. Auto-calculates the day count.",
+    zhDescription:
+      "民國紀年日期範圍選擇器，自動驗證起訖日期順序、計算總天數，由兩個 ROCDatePicker 組合而成。",
+    category: "date",
+    tags: ["民國紀年", "日期範圍", "validation", "天數計算"],
+    props: [
+      { name: "value", type: "ROCDateRange", required: true, description: "Current range value", zhDescription: "目前範圍值" },
+      { name: "onChange", type: "(range: ROCDateRange) => void", required: true, description: "Change callback", zhDescription: "變更回呼" },
+      { name: "minDate", type: "Date", required: false, description: "Outer min date constraint", zhDescription: "整體最小日期" },
+      { name: "maxDate", type: "Date", required: false, description: "Outer max date constraint", zhDescription: "整體最大日期" },
+      { name: "startPlaceholder", type: "string", default: '"起始日期"', required: false, description: "Start picker placeholder", zhDescription: "起始日佔位" },
+      { name: "endPlaceholder", type: "string", default: '"結束日期"', required: false, description: "End picker placeholder", zhDescription: "結束日佔位" },
+      { name: "disabled", type: "boolean", default: "false", required: false, description: "Disable both pickers", zhDescription: "停用全部" },
+      { name: "showGregorianSub", type: "boolean", default: "true", required: false, description: "Show Gregorian subtitle", zhDescription: "顯示西元副標" },
+      { name: "separator", type: "React.ReactNode", default: '"→"', required: false, description: "Between-pickers separator", zhDescription: "中間分隔符" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/ROCDateRangePicker/index.tsx",
+    dependencies: ["components/taiwan/ROCDatePicker"],
+    status: "stable",
+  },
+  {
+    slug: "tax-bracket-calculator",
+    name: "TaxBracketCalculator",
+    zhName: "個人綜合所得稅試算",
+    description:
+      "Taiwan personal income tax (個人綜合所得稅) bracket calculator with 5 progressive brackets (5/12/20/30/40%). Shows total tax, marginal + effective rates, and a per-bracket visualisation. Uses 2025 brackets per 財政部 by default; pass custom brackets for older tax years.",
+    zhDescription:
+      "依財政部公告之 2025 年 5 級累進稅率（5/12/20/30/40%）試算個人綜合所得稅，顯示應納稅額、邊際與有效稅率、分級可視化長條圖。可傳入自訂稅率表進行情境模擬。",
+    category: "tax",
+    tags: ["個人所得稅", "5 級累進", "財政部 2025", "累進差額"],
+    props: [
+      { name: "income", type: "number", required: false, description: "Controlled income value", zhDescription: "受控所得值" },
+      { name: "onIncomeChange", type: "(income: number | null) => void", required: false, description: "Income change callback", zhDescription: "所得變更回呼" },
+      { name: "defaultIncome", type: "number", default: "1000000", required: false, description: "Initial income for uncontrolled use", zhDescription: "預設所得" },
+      { name: "brackets", type: "readonly TaxBracket[]", required: false, description: "Override brackets (e.g. previous tax years)", zhDescription: "覆寫稅率表" },
+      { name: "showBreakdown", type: "boolean", default: "true", required: false, description: "Show per-bracket detail bars", zhDescription: "顯示分級長條圖" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaxBracketCalculator/index.tsx",
+    dependencies: ["lib/tax-bracket-tw.ts", "lib/currency-tw.ts"],
+    status: "stable",
+  },
+  {
+    slug: "taiwan-calendar-month",
+    name: "TaiwanCalendarMonth",
+    zhName: "台灣月曆",
+    description:
+      "Full month calendar grid with ROC year header, weekday labels, weekend tinting, holiday badges (via TaiwanHolidayBadge), prev/next navigation, and full keyboard support (arrow keys, Enter to select).",
+    zhDescription:
+      "完整月曆網格，含民國年標題、週末色調、國定假日標記（整合 TaiwanHolidayBadge）、前後月切換按鈕、完整鍵盤導覽支援。",
+    category: "date",
+    tags: ["月曆", "民國紀年", "假日標記", "鍵盤導覽"],
+    props: [
+      { name: "year", type: "number", required: true, description: "Gregorian year", zhDescription: "西元年" },
+      { name: "month", type: "number", required: true, description: "Month (0-indexed: 0 = January)", zhDescription: "月份（0 = 一月）" },
+      { name: "value", type: "Date | null", required: false, description: "Selected date", zhDescription: "已選日期" },
+      { name: "onSelect", type: "(date: Date) => void", required: false, description: "Cell click callback", zhDescription: "點擊日期回呼" },
+      { name: "onMonthChange", type: "(year: number, month: number) => void", required: false, description: "Month navigation callback", zhDescription: "切換月份回呼" },
+      { name: "showNav", type: "boolean", default: "true", required: false, description: "Show prev/next buttons", zhDescription: "顯示前後月按鈕" },
+      { name: "english", type: "boolean", default: "false", required: false, description: "English weekday headers", zhDescription: "英文星期標題" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanCalendarMonth/index.tsx",
+    dependencies: ["components/taiwan/TaiwanHolidayBadge"],
+    status: "stable",
+  },
 ];
 
 export const CATEGORIES: { key: ComponentCategory; label: string; zhLabel: string }[] = [
@@ -418,4 +516,5 @@ export const CATEGORIES: { key: ComponentCategory; label: string; zhLabel: strin
   { key: "finance", label: "Finance", zhLabel: "金融" },
   { key: "vehicle", label: "Vehicle", zhLabel: "車輛" },
   { key: "map", label: "Map", zhLabel: "地圖" },
+  { key: "tax", label: "Tax", zhLabel: "稅務" },
 ];
