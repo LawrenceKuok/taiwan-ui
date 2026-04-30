@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 const NAV_LINKS = [
   { href: "/", label: "首頁" },
   { href: "/components", label: "元件庫" },
+  { href: "/compare", label: "為什麼選" },
   { href: "/demo", label: "元件文件" },
   { href: "/form", label: "表單範例" },
   { href: "/changelog", label: "變更日誌" },
-  { href: "/submit", label: "提交" },
 ];
 
 export default function Navbar() {

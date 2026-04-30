@@ -1,0 +1,12 @@
+# Configuration for the GitHub Sponsors button on this repo.
+# See https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+# Once you've set up GitHub Sponsors at https://github.com/sponsors/accounts,
+# uncomment the line below and replace with your username.
+# github: LawrenceKuok
+
+# OpenCollective fund (post-v0.2 setup):
+# open_collective: taiwan-ui
+
+# Direct funding URLs (up to 4 entries):
+# custom: ['https://taiwan-ui.vercel.app/sponsor']
