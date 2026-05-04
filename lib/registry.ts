@@ -504,6 +504,75 @@ export const REGISTRY: ComponentMeta[] = [
     dependencies: ["components/taiwan/TaiwanHolidayBadge"],
     status: "stable",
   },
+  {
+    slug: "health-insurance-calculator",
+    name: "HealthInsuranceCalculator",
+    zhName: "健保費試算",
+    description:
+      "全民健康保險 (NHI) premium calculator for category-1 employees. Computes insured-amount bracket from monthly salary, applies the 5.17% premium rate, and shows the employee/employer/government three-way split with dependent multiplier (capped at 3).",
+    zhDescription:
+      "依 衛福部健保署 投保金額分級表計算每月健保費，含員工/雇主/政府三方分攤、眷屬人數加成（上限 3 人）。費率採 2026 年公告值 5.17%。",
+    category: "tax",
+    tags: ["健保", "NHI", "社會保險", "薪資", "雇主分攤"],
+    props: [
+      { name: "defaultIncome", type: "number", default: "50000", required: false, description: "Initial monthly income", zhDescription: "預設月薪" },
+      { name: "defaultDependents", type: "number", default: "0", required: false, description: "Initial dependent count", zhDescription: "預設眷屬人數" },
+      { name: "income", type: "number", required: false, description: "Controlled monthly income", zhDescription: "受控月薪" },
+      { name: "onIncomeChange", type: "(income: number) => void", required: false, description: "Income change callback", zhDescription: "月薪變更回呼" },
+      { name: "dependents", type: "number", required: false, description: "Controlled dependent count", zhDescription: "受控眷屬人數" },
+      { name: "onDependentsChange", type: "(n: number) => void", required: false, description: "Dependent change callback", zhDescription: "眷屬人數變更回呼" },
+      { name: "premiumRate", type: "number", default: "0.0517", required: false, description: "Override premium rate", zhDescription: "覆寫費率" },
+      { name: "showAnnual", type: "boolean", default: "true", required: false, description: "Show annual employee summary", zhDescription: "顯示年度員工負擔" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/HealthInsuranceCalculator/index.tsx",
+    dependencies: ["lib/health-insurance-tw.ts", "lib/currency-tw.ts"],
+    status: "stable",
+  },
+  {
+    slug: "taiwan-mrt-picker",
+    name: "TaiwanMRTPicker",
+    zhName: "捷運車站選擇器",
+    description:
+      "Picker for Taipei Metro (TRTC), Kaohsiung Metro (KRTC), and Taichung Metro (TMRT) stations. Searchable by 中文/English name or station code, browsable by line with color-coded line tags. Bundles current station data; transfer markers shown inline.",
+    zhDescription:
+      "支援台北、高雄、台中三大捷運系統，含路線顏色標記、轉乘站標記、中英搜尋。資料截至 2026-04，可內建使用或外部覆寫。",
+    category: "address",
+    tags: ["捷運", "MRT", "車站", "台北捷運", "高雄捷運", "台中捷運"],
+    props: [
+      { name: "value", type: "MRTSelection | null", required: false, description: "Currently-selected station", zhDescription: "已選車站" },
+      { name: "onChange", type: "(selection: MRTSelection | null) => void", required: false, description: "Selection change callback", zhDescription: "選擇變更回呼" },
+      { name: "systems", type: "(\"trtc\" | \"krtc\" | \"tmrt\")[]", required: false, description: "Restrict to specific systems", zhDescription: "限制系統" },
+      { name: "lang", type: "\"zh\" | \"en\"", default: "\"zh\"", required: false, description: "Display language preference", zhDescription: "顯示語言" },
+      { name: "placeholder", type: "string", required: false, description: "Search placeholder", zhDescription: "搜尋框佔位文字" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanMRTPicker/index.tsx",
+    dependencies: ["data/taiwan-mrt.json"],
+    status: "stable",
+  },
+  {
+    slug: "taiwan-convenience-store-picker",
+    name: "TaiwanConvenienceStorePicker",
+    zhName: "超商取貨選擇器",
+    description:
+      "Convenience-store pickup-location picker for Taiwan e-commerce checkouts. Supports the four major chains (7-ELEVEN, FamilyMart, Hi-Life, OK Mart) with chain/city/keyword filtering. Ships with a demo dataset of ~50 stores; production deployments pass live data via the `stores` prop (e.g. ECPay logistics API).",
+    zhDescription:
+      "台灣超商取貨門市選擇器，支援四大連鎖（7-ELEVEN、全家、萊爾富、OK 超商）。內建 ~50 家示範門市，可透過 stores prop 串接 ECPay/Pay2go 物流 API 即時門市清單。",
+    category: "address",
+    tags: ["超商", "取貨", "7-ELEVEN", "全家", "FamilyMart", "電商", "物流"],
+    props: [
+      { name: "value", type: "ConvenienceStore | null", required: false, description: "Currently-selected store", zhDescription: "已選門市" },
+      { name: "onChange", type: "(store: ConvenienceStore | null) => void", required: false, description: "Selection change callback", zhDescription: "選擇變更回呼" },
+      { name: "stores", type: "ConvenienceStore[]", required: false, description: "Override bundled demo dataset with live data", zhDescription: "覆寫內建門市資料" },
+      { name: "chains", type: "ConvenienceChain[]", required: false, description: "Restrict to specific chains", zhDescription: "限制連鎖品牌" },
+      { name: "defaultCity", type: "string", required: false, description: "Initial city filter", zhDescription: "預設縣市" },
+    ],
+    version: "0.1.0",
+    source: "components/taiwan/TaiwanConvenienceStorePicker/index.tsx",
+    dependencies: ["data/taiwan-convenience-stores.json"],
+    status: "stable",
+  },
 ];
 
 export const CATEGORIES: { key: ComponentCategory; label: string; zhLabel: string }[] = [

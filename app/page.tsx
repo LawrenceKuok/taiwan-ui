@@ -156,9 +156,9 @@ export default function LandingPage() {
           {/* Stats */}
           <div className="animate-fade-in-up opacity-0 animate-delay-400 grid grid-cols-4 gap-4 max-w-lg mx-auto mt-16">
             {[
-              { v: "21", l: "元件" },
-              { v: "11", l: "校驗器" },
-              { v: "150+", l: "單元測試" },
+              { v: "24", l: "元件" },
+              { v: "12", l: "校驗器" },
+              { v: "180+", l: "單元測試" },
               { v: "零", l: "外部依賴" },
             ].map((s) => (
               <div key={s.l} className="text-center">

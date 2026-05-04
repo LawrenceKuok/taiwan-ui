@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "version": "2026-04",
+    "type": "demo-dataset",
+    "warning": "DEMO / SAMPLE DATA. Store IDs and exact addresses are illustrative for UI development. Production deployments MUST swap this for live data — see lib/code-examples/taiwan-convenience-store-picker.ts for integration patterns with ECPay's logistics API, 7-Eleven's Open Data, and similar live sources.",
+    "purpose": "Renders the picker with realistic-looking results so developers can build/test UI flows. Not for actual order fulfillment.",
+    "chains": [
+      { "id": "711", "name": "7-ELEVEN", "zhName": "7-ELEVEN", "color": "#fa6400" },
+      { "id": "family", "name": "FamilyMart", "zhName": "全家", "color": "#0099da" },
+      { "id": "hilife", "name": "Hi-Life", "zhName": "萊爾富", "color": "#e30613" },
+      { "id": "okmart", "name": "OK Mart", "zhName": "OK 超商", "color": "#fdb715" }
+    ]
+  },
+  "stores": [
+    { "id": "711-001", "chain": "711", "name": "信義店", "address": "臺北市信義區市府路 45 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "711-002", "chain": "711", "name": "市府店", "address": "臺北市信義區忠孝東路五段 68 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "711-003", "chain": "711", "name": "誠品店", "address": "臺北市信義區松高路 11 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "711-004", "chain": "711", "name": "東門店", "address": "臺北市大安區信義路二段 81 號", "city": "臺北市", "district": "大安區", "postal": "106", "hours": "24h" },
+    { "id": "711-005", "chain": "711", "name": "復興店", "address": "臺北市大安區忠孝東路四段 89 號", "city": "臺北市", "district": "大安區", "postal": "106", "hours": "24h" },
+    { "id": "711-006", "chain": "711", "name": "公館店", "address": "臺北市中正區羅斯福路四段 18 號", "city": "臺北市", "district": "中正區", "postal": "100", "hours": "24h" },
+    { "id": "711-007", "chain": "711", "name": "西門店", "address": "臺北市萬華區漢中街 52 號", "city": "臺北市", "district": "萬華區", "postal": "108", "hours": "24h" },
+    { "id": "711-008", "chain": "711", "name": "士林店", "address": "臺北市士林區文林路 119 號", "city": "臺北市", "district": "士林區", "postal": "111", "hours": "24h" },
+    { "id": "711-009", "chain": "711", "name": "天母店", "address": "臺北市士林區天母西路 32 號", "city": "臺北市", "district": "士林區", "postal": "111", "hours": "24h" },
+    { "id": "711-010", "chain": "711", "name": "內湖店", "address": "臺北市內湖區成功路四段 8 號", "city": "臺北市", "district": "內湖區", "postal": "114", "hours": "24h" },
+    { "id": "711-011", "chain": "711", "name": "板橋店", "address": "新北市板橋區文化路一段 268 號", "city": "新北市", "district": "板橋區", "postal": "220", "hours": "24h" },
+    { "id": "711-012", "chain": "711", "name": "新莊店", "address": "新北市新莊區中正路 100 號", "city": "新北市", "district": "新莊區", "postal": "242", "hours": "24h" },
+    { "id": "711-013", "chain": "711", "name": "中和店", "address": "新北市中和區景平路 200 號", "city": "新北市", "district": "中和區", "postal": "235", "hours": "24h" },
+    { "id": "711-014", "chain": "711", "name": "桃園店", "address": "桃園市桃園區中正路 1080 號", "city": "桃園市", "district": "桃園區", "postal": "330", "hours": "24h" },
+    { "id": "711-015", "chain": "711", "name": "新竹店", "address": "新竹市東區光復路一段 89 號", "city": "新竹市", "district": "東區", "postal": "300", "hours": "24h" },
+    { "id": "711-016", "chain": "711", "name": "台中車站店", "address": "臺中市中區建國路 172 號", "city": "臺中市", "district": "中區", "postal": "400", "hours": "24h" },
+    { "id": "711-017", "chain": "711", "name": "逢甲店", "address": "臺中市西屯區福星路 525 號", "city": "臺中市", "district": "西屯區", "postal": "407", "hours": "24h" },
+    { "id": "711-018", "chain": "711", "name": "美麗島店", "address": "高雄市新興區中山一路 115 號", "city": "高雄市", "district": "新興區", "postal": "800", "hours": "24h" },
+    { "id": "711-019", "chain": "711", "name": "鹽埕店", "address": "高雄市鹽埕區大公路 78 號", "city": "高雄市", "district": "鹽埕區", "postal": "803", "hours": "24h" },
+    { "id": "711-020", "chain": "711", "name": "台南火車站店", "address": "臺南市東區北門路一段 4 號", "city": "臺南市", "district": "東區", "postal": "701", "hours": "24h" },
+
+    { "id": "fam-001", "chain": "family", "name": "市府店", "address": "臺北市信義區市府路 1 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "fam-002", "chain": "family", "name": "敦化店", "address": "臺北市大安區敦化南路一段 187 號", "city": "臺北市", "district": "大安區", "postal": "106", "hours": "24h" },
+    { "id": "fam-003", "chain": "family", "name": "忠孝店", "address": "臺北市大安區忠孝東路四段 152 號", "city": "臺北市", "district": "大安區", "postal": "106", "hours": "24h" },
+    { "id": "fam-004", "chain": "family", "name": "西門町店", "address": "臺北市萬華區峨嵋街 50 號", "city": "臺北市", "district": "萬華區", "postal": "108", "hours": "24h" },
+    { "id": "fam-005", "chain": "family", "name": "中山店", "address": "臺北市中山區南京東路二段 63 號", "city": "臺北市", "district": "中山區", "postal": "104", "hours": "24h" },
+    { "id": "fam-006", "chain": "family", "name": "民生店", "address": "臺北市松山區民生東路三段 130 號", "city": "臺北市", "district": "松山區", "postal": "105", "hours": "24h" },
+    { "id": "fam-007", "chain": "family", "name": "天母西店", "address": "臺北市士林區天母西路 18 號", "city": "臺北市", "district": "士林區", "postal": "111", "hours": "24h" },
+    { "id": "fam-008", "chain": "family", "name": "板橋車站店", "address": "新北市板橋區縣民大道二段 7 號", "city": "新北市", "district": "板橋區", "postal": "220", "hours": "24h" },
+    { "id": "fam-009", "chain": "family", "name": "三重店", "address": "新北市三重區重新路二段 10 號", "city": "新北市", "district": "三重區", "postal": "241", "hours": "24h" },
+    { "id": "fam-010", "chain": "family", "name": "桃園藝文店", "address": "桃園市桃園區同安街 360 號", "city": "桃園市", "district": "桃園區", "postal": "330", "hours": "24h" },
+    { "id": "fam-011", "chain": "family", "name": "新竹科學園區店", "address": "新竹市東區園區二路 1 號", "city": "新竹市", "district": "東區", "postal": "300", "hours": "24h" },
+    { "id": "fam-012", "chain": "family", "name": "台中一中店", "address": "臺中市北區三民路三段 110 號", "city": "臺中市", "district": "北區", "postal": "404", "hours": "24h" },
+    { "id": "fam-013", "chain": "family", "name": "高雄三多店", "address": "高雄市苓雅區三多三路 120 號", "city": "高雄市", "district": "苓雅區", "postal": "802", "hours": "24h" },
+    { "id": "fam-014", "chain": "family", "name": "台南成大店", "address": "臺南市東區大學路 1 號", "city": "臺南市", "district": "東區", "postal": "701", "hours": "24h" },
+
+    { "id": "hi-001", "chain": "hilife", "name": "信義店", "address": "臺北市信義區忠孝東路五段 295 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "hi-002", "chain": "hilife", "name": "公館店", "address": "臺北市中正區羅斯福路三段 245 號", "city": "臺北市", "district": "中正區", "postal": "100", "hours": "24h" },
+    { "id": "hi-003", "chain": "hilife", "name": "板橋店", "address": "新北市板橋區民生路二段 188 號", "city": "新北市", "district": "板橋區", "postal": "220", "hours": "24h" },
+    { "id": "hi-004", "chain": "hilife", "name": "桃園中正店", "address": "桃園市桃園區中正路 580 號", "city": "桃園市", "district": "桃園區", "postal": "330", "hours": "24h" },
+    { "id": "hi-005", "chain": "hilife", "name": "台中西屯店", "address": "臺中市西屯區青海路二段 168 號", "city": "臺中市", "district": "西屯區", "postal": "407", "hours": "24h" },
+    { "id": "hi-006", "chain": "hilife", "name": "高雄前金店", "address": "高雄市前金區中正四路 83 號", "city": "高雄市", "district": "前金區", "postal": "801", "hours": "24h" },
+
+    { "id": "ok-001", "chain": "okmart", "name": "信義店", "address": "臺北市信義區松仁路 90 號", "city": "臺北市", "district": "信義區", "postal": "110", "hours": "24h" },
+    { "id": "ok-002", "chain": "okmart", "name": "大安店", "address": "臺北市大安區四維路 110 號", "city": "臺北市", "district": "大安區", "postal": "106", "hours": "24h" },
+    { "id": "ok-003", "chain": "okmart", "name": "板橋店", "address": "新北市板橋區三民路一段 60 號", "city": "新北市", "district": "板橋區", "postal": "220", "hours": "24h" },
+    { "id": "ok-004", "chain": "okmart", "name": "中壢店", "address": "桃園市中壢區中央西路二段 280 號", "city": "桃園市", "district": "中壢區", "postal": "320", "hours": "24h" },
+    { "id": "ok-005", "chain": "okmart", "name": "台中北屯店", "address": "臺中市北屯區崇德路二段 100 號", "city": "臺中市", "district": "北屯區", "postal": "406", "hours": "24h" },
+    { "id": "ok-006", "chain": "okmart", "name": "高雄苓雅店", "address": "高雄市苓雅區四維三路 6 號", "city": "高雄市", "district": "苓雅區", "postal": "802", "hours": "24h" }
+  ]
+}

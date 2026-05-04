@@ -22,6 +22,9 @@ import TaiwanCurrencyInput from "@/components/taiwan/TaiwanCurrencyInput";
 import ROCDateRangePicker, { type ROCDateRange } from "@/components/taiwan/ROCDateRangePicker";
 import TaxBracketCalculator from "@/components/taiwan/TaxBracketCalculator";
 import TaiwanCalendarMonth from "@/components/taiwan/TaiwanCalendarMonth";
+import HealthInsuranceCalculator from "@/components/taiwan/HealthInsuranceCalculator";
+import TaiwanMRTPicker, { type MRTSelection } from "@/components/taiwan/TaiwanMRTPicker";
+import TaiwanConvenienceStorePicker, { type ConvenienceStore } from "@/components/taiwan/TaiwanConvenienceStorePicker";
 import { toCapitalChinese } from "@/lib/currency-tw";
 
 function DemoROCDatePicker() {
@@ -600,6 +603,51 @@ function DemoTaiwanCalendarMonth() {
   );
 }
 
+function DemoHealthInsuranceCalculator() {
+  return (
+    <div className="space-y-4">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        試算 2026 年（115 年度）健保費。輸入月薪與眷屬人數，立刻看到投保金額分級、員工/雇主/政府三方分攤金額。費率 5.17% 為衛福部 2026 年公告值。
+      </p>
+      <HealthInsuranceCalculator defaultIncome={50000} defaultDependents={1} />
+    </div>
+  );
+}
+
+function DemoTaiwanMRTPicker() {
+  const [selected, setSelected] = useState<MRTSelection | null>(null);
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        台北、高雄、台中三大捷運系統的車站選擇器。可搜尋車站名（中/英）、車站代碼，或瀏覽各路線。轉乘標記顯示在站名右側。
+      </p>
+      <TaiwanMRTPicker value={selected} onChange={setSelected} />
+      {selected && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)] overflow-x-auto">
+          {JSON.stringify(selected, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoTaiwanConvenienceStorePicker() {
+  const [selected, setSelected] = useState<ConvenienceStore | null>(null);
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-[var(--muted)] leading-relaxed">
+        台灣超商取貨門市選擇器。內建 ~50 家示範門市跨四大連鎖（7-11、全家、萊爾富、OK 超商）。生產環境可傳入 <code className="text-[10px]">stores</code> prop 串接 ECPay/Pay2go 物流 API 之即時門市清單。
+      </p>
+      <TaiwanConvenienceStorePicker value={selected} onChange={setSelected} />
+      {selected && (
+        <div className="text-xs font-mono p-3 rounded-lg bg-[var(--surface)] border border-[var(--card-border)] text-[var(--muted)] overflow-x-auto">
+          {JSON.stringify(selected, null, 2)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const DEMO_MAP: Record<string, React.ComponentType> = {
   "roc-date-picker": DemoROCDatePicker,
   "twid-input": DemoTWIDInput,
@@ -622,6 +670,9 @@ const DEMO_MAP: Record<string, React.ComponentType> = {
   "roc-date-range-picker": DemoROCDateRangePicker,
   "tax-bracket-calculator": DemoTaxBracketCalculator,
   "taiwan-calendar-month": DemoTaiwanCalendarMonth,
+  "health-insurance-calculator": DemoHealthInsuranceCalculator,
+  "taiwan-mrt-picker": DemoTaiwanMRTPicker,
+  "taiwan-convenience-store-picker": DemoTaiwanConvenienceStorePicker,
 };
 
 export default function ComponentDemo({ slug }: { slug: string }) {
