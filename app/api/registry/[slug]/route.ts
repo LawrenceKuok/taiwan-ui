@@ -42,6 +42,7 @@ export async function GET(
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=3600",
         "Access-Control-Allow-Origin": "*",
+        "X-Robots-Tag": "noindex, nofollow",
       },
     }
   );

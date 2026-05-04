@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CATEGORIES } from "@/lib/registry";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -12,9 +12,11 @@ export default function SubmitPage() {
   const [description, setDescription] = useState("");
   const [useCase, setUseCase] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot — hidden from real users
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
   const [issueUrl, setIssueUrl] = useState<string | null>(null);
+  const renderedAtRef = useRef<number>(Date.now());
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -26,7 +28,16 @@ export default function SubmitPage() {
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, zhName, category, description, useCase, contactEmail }),
+        body: JSON.stringify({
+          name,
+          zhName,
+          category,
+          description,
+          useCase,
+          contactEmail,
+          website, // honeypot — must stay empty
+          _t: renderedAtRef.current, // anti-bot timing check
+        }),
       });
       const data = await res.json();
 
@@ -63,6 +74,28 @@ export default function SubmitPage() {
         </div>
 
         <form onSubmit={submit} className="space-y-5">
+          {/* Honeypot — invisible to real users via aria-hidden + off-screen positioning + autocomplete=off. Bots fill all visible fields and trip this. */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              left: "-9999px",
+              width: "1px",
+              height: "1px",
+              overflow: "hidden",
+            }}
+          >
+            <label htmlFor="website-bot-trap">Website (do not fill)</label>
+            <input
+              id="website-bot-trap"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+          </div>
+
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold mb-1.5">
@@ -182,7 +215,7 @@ export default function SubmitPage() {
         </form>
 
         <p className="text-[10px] text-[var(--muted)] mt-8">
-          Rate-limited to 3 submissions per minute per IP. No login required.
+          Rate-limited to 2 submissions per minute per IP. Honeypot + timing checks active. No login required.
         </p>
       </div>
     </div>
