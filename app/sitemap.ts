@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { REGISTRY } from "@/lib/registry";
 
-const SITE = "https://taiwan-ui.vercel.app";
+const SITE = "https://forge.pgintel.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

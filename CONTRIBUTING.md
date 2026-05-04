@@ -1,4 +1,4 @@
-# Contributing to Taiwan UI
+# Contributing to Forge
 
 See the live contributing guide at https://taiwan-ui.vercel.app/contributing.
 

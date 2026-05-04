@@ -1,4 +1,4 @@
-# Taiwan UI
+# Forge
 
 [![CI](https://github.com/LawrenceKuok/taiwan-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/LawrenceKuok/taiwan-ui/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
@@ -6,15 +6,15 @@
 [![Components](https://img.shields.io/badge/components-21-success)](./lib/registry.ts)
 [![Tests](https://img.shields.io/badge/tests-157%20passing-success)](./tests/)
 [![Zero deps](https://img.shields.io/badge/runtime%20deps-0-brightgreen)](./package.json)
-[![Made for Taiwan](https://img.shields.io/badge/Made%20for-Taiwan%20%F0%9F%87%B9%F0%9F%87%BC-red)](https://taiwan-ui.vercel.app)
+[![Made for Taiwan](https://img.shields.io/badge/Made%20for-Taiwan%20%F0%9F%87%B9%F0%9F%87%BC-red)](https://forge.pgintel.dev)
 
 A component library and documentation site for Taiwan-specific form inputs — 民國紀年 (ROC calendar), 身分證字號 (TWID), 統一編號 (統編), 電話, 車牌, 健保卡, 地址, 統一發票, 電子支付. Zero runtime dependencies, dark-first, accessibility-hardened.
 
 > **Status: pre-1.0**. The validators have test coverage against published specs, but nothing in this repository has been through a formal government procurement audit. See [GOVT_READINESS.md](./GOVT_READINESS.md) for an honest self-assessment.
 
-- **Site**: https://taiwan-ui.vercel.app
-- **Package**: `@taiwan-ui/react` (React 18+)
-- **CLI**: `npx taiwan-ui add <component>` (shadcn-style source copy)
+- **Site**: https://forge.pgintel.dev
+- **Package**: `@pgintel/forge` (React 18+)
+- **CLI**: `npx @pgintel/forge add <component>` (shadcn-style source copy)
 
 ## What's in the box
 
@@ -80,4 +80,4 @@ The documentation site collects no personal data. Validators run client-side; no
 
 ## License
 
-MIT — see `LICENSE`. Copyright (c) Taiwan UI contributors.
+MIT — see `LICENSE`. Copyright (c) Forge contributors.

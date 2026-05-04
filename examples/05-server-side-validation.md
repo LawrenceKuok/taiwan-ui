@@ -4,7 +4,7 @@
 
 A B2B SaaS needs to verify that the company tax ID a user enters at signup actually exists in the 商業司 database — not just that the format is valid. Format-only validation can pass on numbers that look correct but don't correspond to any real company.
 
-This is the canonical "format ≠ existence ≠ identity" pattern that Taiwan UI's `GOVT_READINESS.md` warns about.
+This is the canonical "format ≠ existence ≠ identity" pattern that Forge's `GOVT_READINESS.md` warns about.
 
 ## What you'll build
 
@@ -111,7 +111,7 @@ export default function CompanySignupForm() {
 }
 ```
 
-## Code: server side (already shipped in Taiwan UI)
+## Code: server side (already shipped in Forge)
 
 The `/api/lookup/tax-id` Route Handler exists in this repo at `app/api/lookup/tax-id/route.ts`. Here's a simplified version for use in your own Next.js app:
 

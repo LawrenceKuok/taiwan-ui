@@ -1,4 +1,4 @@
-# g0v 公民科技創新獎助金申請書 — Taiwan UI
+# g0v 公民科技創新獎助金申請書 — Forge
 
 > **Program**: g0v 公民科技創新獎助金（個人組 / 團體組）
 > **Site**: https://grants.g0v.tw/
@@ -13,7 +13,7 @@
 
 | 欄位 | 內容 |
 |---|---|
-| 專案名稱 | Taiwan UI — 台灣本土化開源 React 元件庫 |
+| 專案名稱 | Forge — 台灣本土化開源 React 元件庫 |
 | 申請類別 | 個人組 / 團體組（依當輪規定選擇） |
 | 提案人 | Lawrence Kuok |
 | 共同提案人 | （依招募進度填入） |
@@ -52,7 +52,7 @@
 - **視障使用者**：因無障礙設計改善而獲得平等存取
 - **政府採購預算**：因標準化而減少重複支出
 
-## 四、解決方案：Taiwan UI
+## 四、解決方案：Forge
 
 ### 已完成的部分（v0.1.0，本申請日已上線）
 
@@ -73,7 +73,7 @@
 3. **完整繁體中文文件站**（zh-TW 為主、英文為輔）
 4. **Storybook 整合**（涵蓋全部 21 個元件）
 5. **5 個示範專案**（公開 GitHub repo，展示真實 use case）
-6. **遷移指南**：從常見 DIY 模式遷移到 Taiwan UI
+6. **遷移指南**：從常見 DIY 模式遷移到 Forge
 
 **驗收標準**：npm 每週下載數 ≥ 200，GitHub stars ≥ 100，文件站完成率 100%
 
@@ -171,14 +171,14 @@ g0v 補助結束後，本專案將以下列方式持續：
 ## 附件清單
 
 - [ ] 申請人 CV（中文與英文版各一）
-- [ ] Taiwan UI 專案截圖：landing、元件列表、playground、API、CI、測試覆蓋率（共 8 張）
+- [ ] Forge 專案截圖：landing、元件列表、playground、API、CI、測試覆蓋率（共 8 張）
 - [ ] GitHub commit history 摘要（顯示專案活躍度）
 - [ ] 過往開源作品連結（若有）
 - [ ] 預算明細試算表（Excel 或 Google Sheet 連結）
 
 ## 附錄：與 g0v 過往得獎專案對照
 
-下列 g0v 補助專案與 Taiwan UI 在性質上有相近處，可供評審對照參考：
+下列 g0v 補助專案與 Forge 在性質上有相近處，可供評審對照參考：
 
 - ⟨填入：經研究 grants.g0v.tw 過往得獎清單後，列出 3–5 個性質相近的得獎案例⟩
 
@@ -186,7 +186,7 @@ g0v 補助結束後，本專案將以下列方式持續：
 
 ## English Executive Summary
 
-Taiwan UI (taiwan-ui.vercel.app) is an MIT-licensed, zero-runtime-dependency open-source React component library standardizing every Taiwan-localized form input that developers currently reimplement: ROC calendar, TWID with new-format ARC, tax ID with 7-rule, NHI card, license plate, phone with full area-code coverage including 馬祖 and 烏坵, address, uniform invoice, and more. v0.1.0 ships 21 components, 11 pure-function validators/calculators, 157 passing tests, and a shadcn-style CLI.
+Forge (taiwan-ui.vercel.app) is an MIT-licensed, zero-runtime-dependency open-source React component library standardizing every Taiwan-localized form input that developers currently reimplement: ROC calendar, TWID with new-format ARC, tax ID with 7-rule, NHI card, license plate, phone with full area-code coverage including 馬祖 and 烏坵, address, uniform invoice, and more. v0.1.0 ships 21 components, 11 pure-function validators/calculators, 157 passing tests, and a shadcn-style CLI.
 
 This NT$300,000 / 6-month grant funds the transition from a technically-complete library to one with measurable community adoption: npm publication, full Traditional Chinese documentation site, government API server-side wrappers, and two community events. Aligns precisely with g0v's civic-tech mission of building open digital infrastructure for Taiwan.
 

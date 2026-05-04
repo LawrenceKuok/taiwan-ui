@@ -7,7 +7,7 @@ Best time to post: **Tuesday or Wednesday, 8–10pm Taiwan time** (peak engageme
 ## Version A — Bilingual short (recommended for Threads)
 
 ```
-我剛開源了 Taiwan UI 🇹🇼
+我剛開源了 Forge 🇹🇼
 
 一套給台灣工程師的 React 元件庫——
 解決每個人都重複實作的身分證/統編/健保卡/民國紀年/車牌/電話 驗證
@@ -22,7 +22,7 @@ taiwan-ui.vercel.app
 不取代政府 API 真偽驗證，但把前端輸入層做到位 ✨
 
 ——
-Just open-sourced Taiwan UI 🇹🇼
+Just open-sourced Forge 🇹🇼
 
 A React component library for the Taiwan-localized form inputs every dev keeps reimplementing — TWID, tax ID, NHI card, ROC calendar, license plate, phone.
 
@@ -54,7 +54,7 @@ So I open-sourced one library that fixes this for everyone. 🧵
 
 **Tweet 2 (what it is):**
 ```
-Taiwan UI: an open-source React component library for the Taiwan-localized form inputs every dev keeps rebuilding.
+Forge: an open-source React component library for the Taiwan-localized form inputs every dev keeps rebuilding.
 
 ROC calendar · TWID · tax ID · NHI card · license plate · phone · address · invoice · bank account.
 
@@ -111,7 +111,7 @@ Open issues: github.com/LawrenceKuok/taiwan-ui
 ```
 Three weeks ago I moved to Taipei on a Taiwan Gold Card.
 
-Today I'm open-sourcing the project that brought me here: Taiwan UI — a React component library for the Taiwan-localized form inputs (ID validation, ROC calendar, tax ID, etc.) that every Taiwan developer reimplements.
+Today I'm open-sourcing the project that brought me here: Forge — a React component library for the Taiwan-localized form inputs (ID validation, ROC calendar, tax ID, etc.) that every Taiwan developer reimplements.
 
 21 components, 157 tests, zero runtime deps, MIT.
 

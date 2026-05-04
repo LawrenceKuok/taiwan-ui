@@ -149,7 +149,7 @@ Even with valid client-side format validation, hit `/api/lookup/tax-id?id=...` (
 
 ### 5. Accessibility
 
-All Taiwan UI inputs ship `aria-invalid`, `aria-describedby`, and `role="alert"` semantics by default. The `<label htmlFor>` pattern above is what completes the accessibility loop — don't replace labels with placeholders.
+All Forge inputs ship `aria-invalid`, `aria-describedby`, and `role="alert"` semantics by default. The `<label htmlFor>` pattern above is what completes the accessibility loop — don't replace labels with placeholders.
 
 ### 6. Dark mode
 

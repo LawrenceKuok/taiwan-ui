@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "為什麼選 Taiwan UI · Why Taiwan UI",
+  title: "為什麼選 Forge · Why Forge",
   description:
-    "Compare Taiwan UI against hand-rolled validators, generic libraries, and other approaches.",
+    "Compare Forge against hand-rolled validators, generic libraries, and other approaches.",
 };
 
 const ROWS = [
@@ -119,7 +119,7 @@ export default function ComparePage() {
         {/* Hero */}
         <header className="mb-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-3">
-            為什麼選 Taiwan UI？
+            為什麼選 Forge？
           </h1>
           <p className="text-[var(--muted)] text-sm leading-relaxed">
             Most Taiwan-localized form inputs in the wild are either copy-pasted
@@ -132,7 +132,7 @@ export default function ComparePage() {
             <code className="text-xs bg-[var(--surface)] px-1 rounded">
               7-rule
             </code>
-            . Here&apos;s how Taiwan UI compares.
+            . Here&apos;s how Forge compares.
           </p>
           <p className="text-[var(--muted)] text-sm leading-relaxed mt-2 italic">
             民間 React 元件解決方案的常見問題 — Stack Overflow 抄寫、generic 國際套件不認識台灣本土規格。
@@ -160,7 +160,7 @@ export default function ComparePage() {
                   </div>
                 </th>
                 <th className="text-center py-3 px-3 font-semibold w-32 bg-blue-500/5 rounded-t-lg">
-                  Taiwan UI
+                  Forge
                   <div className="text-[10px] text-blue-400/70 font-normal mt-0.5">
                     這套
                   </div>
@@ -214,7 +214,7 @@ export default function ComparePage() {
           </aside>
           <aside className="p-4 rounded-lg bg-[var(--card-bg)] border border-[var(--card-border)]">
             <h2 className="font-bold text-[var(--foreground)] mb-2 text-sm">
-              Taiwan UI 也不適合的場景
+              Forge 也不適合的場景
             </h2>
             <p>
               本表只比格式與 UI 層。對於需要「真偽驗證」之高風險場景 (KYC、處方箋、政府福利資格)，請參考{" "}

@@ -18,9 +18,19 @@ const notoSerifTC = Noto_Serif_TC({
 });
 
 export const metadata: Metadata = {
-  title: "台灣 UI 元件庫 — Taiwan UI Components",
+  title: "Forge — 台灣本土化 React 元件庫",
   description:
-    "專為台灣數位服務打造的開源 React 元件庫。Production-ready React components for Taiwan-specific forms, payments, and data entry.",
+    "Forge — 開源 React 元件庫，專為台灣本土化表單輸入打造。Open-source React components for Taiwan-localized form inputs: ROC date, TWID, tax ID, NHI card, license plate, phone, address, invoice. Zero deps. MIT.",
+  metadataBase: new URL("https://forge.pgintel.dev"),
+  openGraph: {
+    title: "Forge — 台灣本土化 React 元件庫",
+    description:
+      "21 components, 11 validators, 169 passing tests. Zero runtime dependencies. MIT-licensed. Built for the Taiwan-localized form inputs every developer reimplements.",
+    url: "https://forge.pgintel.dev",
+    siteName: "Forge",
+    locale: "zh_TW",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

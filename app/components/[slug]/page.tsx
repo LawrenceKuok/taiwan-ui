@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const component = getComponentBySlug(slug);
   if (!component) return { title: "Not Found" };
   return {
-    title: `${component.name} (${component.zhName}) | Taiwan UI`,
+    title: `${component.name} (${component.zhName}) | Forge`,
     description: component.description,
   };
 }

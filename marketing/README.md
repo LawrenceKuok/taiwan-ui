@@ -1,6 +1,6 @@
 # Marketing & Launch Copy
 
-Ready-to-paste copy for the Taiwan UI launch sequence. Run these in roughly this order over 2–3 weeks.
+Ready-to-paste copy for the Forge launch sequence. Run these in roughly this order over 2–3 weeks.
 
 ## Files & order
 

@@ -1,6 +1,6 @@
 # Roadmap
 
-This is the public roadmap for Taiwan UI. Dates are intent, not promises — adjusted as the project evolves and as community feedback lands.
+This is the public roadmap for Forge. Dates are intent, not promises — adjusted as the project evolves and as community feedback lands.
 
 > Current version: **0.1.0** · 21 components · 157 tests · live at https://taiwan-ui.vercel.app
 
@@ -48,7 +48,7 @@ Hardens the library for use in regulated industries (health, finance, government
 - [ ] Statement of compliance with 個資法 (PDPA) for the validators
 - [ ] Threat model document (STRIDE) for the API surfaces
 
-**Success metric**: First government RFP citing Taiwan UI as an accepted dependency.
+**Success metric**: First government RFP citing Forge as an accepted dependency.
 
 ---
 
@@ -83,7 +83,7 @@ API freeze. Semantic-versioning commitments. Long-term-support story.
 
 These are interesting but not committed:
 
-- Visual builder UI for composing forms from Taiwan UI components
+- Visual builder UI for composing forms from Forge components
 - AI-assisted form-schema → component generation
 - Component variants for legal/government 公文 style (more formal typography)
 - Print-friendly variants for invoice / contract rendering

@@ -6,7 +6,7 @@
  * Full Gregorian ↔ 農曆 conversion requires a multi-decade encoded table
  * (1900–2100) and is non-trivial to implement correctly without a reference
  * library. This module ships a deliberately scoped subset that covers the
- * vast majority of real Taiwan UI use cases:
+ * vast majority of real Forge use cases:
  *
  *  ✅ Stem-Branch year (天干地支) for any Gregorian year — purely formulaic
  *  ✅ Zodiac animal (生肖) for any Gregorian year — purely formulaic

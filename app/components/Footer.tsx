@@ -47,16 +47,16 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-bold">
-                TW
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-black shadow-md shadow-orange-500/20">
+                F
               </div>
-              <span className="font-bold text-sm">台灣 UI</span>
+              <span className="font-bold text-sm tracking-tight">Forge</span>
             </Link>
             <p className="text-xs text-[var(--muted)] leading-relaxed max-w-xs">
-              專為台灣數位服務打造的開源 React 元件庫。
+              台灣本土化表單輸入的開源 React 元件庫。
             </p>
             <p className="text-xs text-[var(--muted)] leading-relaxed max-w-xs mt-1">
-              Open-source React components for Taiwan digital services.
+              Open-source components for Taiwan-localized form inputs.
             </p>
           </div>
 
@@ -84,10 +84,10 @@ export default function Footer() {
 
         <div className="pt-6 border-t border-[var(--card-border)] flex flex-wrap items-center justify-between gap-2">
           <p className="text-[10px] text-[var(--muted)]">
-            © 2026 Taiwan UI. MIT License. Built in Taipei.
+            © 2026 Forge. MIT License. Built in Taipei.
           </p>
           <p className="text-[10px] text-[var(--muted)] font-mono">
-            npx taiwan-ui add &lt;component&gt;
+            npm i @pgintel/forge
           </p>
         </div>
       </div>

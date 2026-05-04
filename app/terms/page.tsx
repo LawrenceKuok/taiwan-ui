@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "使用條款 Terms of Use | Taiwan UI",
-  description: "Terms of use for Taiwan UI components and documentation site.",
+  title: "使用條款 Terms of Use | Forge",
+  description: "Terms of use for Forge components and documentation site.",
 };
 
 const LAST_UPDATED = "2026-04-15";
@@ -18,7 +18,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold mb-2 text-[var(--foreground)]">1. 授權 · License</h2>
             <p>
-              Taiwan UI 元件原始碼採 MIT 授權釋出。您可自由複製、修改、商用，惟需保留原始版權聲明。
+              Forge 元件原始碼採 MIT 授權釋出。您可自由複製、修改、商用，惟需保留原始版權聲明。
               The component source code is released under the MIT License. You may copy, modify, and use it commercially provided you retain the copyright notice.
             </p>
           </section>

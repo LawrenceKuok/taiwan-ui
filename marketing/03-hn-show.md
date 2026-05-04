@@ -10,12 +10,12 @@ Pick ONE. They have very different effects:
 
 **Option A — Direct, scannable** (recommended for first-time HN poster):
 ```
-Show HN: Taiwan UI – open-source React components for Taiwan-localized form inputs
+Show HN: Forge – open-source React components for Taiwan-localized form inputs
 ```
 
 **Option B — Specific hook** (higher CTR but riskier — bait can backfire):
 ```
-Show HN: Taiwan UI – the validators every Taiwan developer keeps reimplementing
+Show HN: Forge – the validators every Taiwan developer keeps reimplementing
 ```
 
 **Option C — Self-deprecating / honest** (works well for solo OSS):
@@ -28,7 +28,7 @@ Show HN: I built a React library for Taiwan-localized forms because I was tired 
 ```
 Hi HN,
 
-I'm Lawrence, recently relocated to Taipei. I open-sourced Taiwan UI — a React component library standardizing the inputs every Taiwan-facing app reimplements: ROC calendar (民國), national ID checksum (身分證), tax ID with 7-rule (統一編號), NHI card, license plate, phone with full area-code coverage, address, uniform invoice, and more.
+I'm Lawrence, recently relocated to Taipei. I open-sourced Forge — a React component library standardizing the inputs every Taiwan-facing app reimplements: ROC calendar (民國), national ID checksum (身分證), tax ID with 7-rule (統一編號), NHI card, license plate, phone with full area-code coverage, address, uniform invoice, and more.
 
 Why this exists: every digital service handling Taiwan users needs to validate these fields, and most ship hand-rolled implementations with edge-case bugs and missing accessibility. Examples I've personally seen go wrong:
 
@@ -73,7 +73,7 @@ Happy to answer any questions about the validator algorithms (they're each deriv
 Likely critical questions and good responses:
 
 **Q: "Why not just use an existing validator like @yiminghe/async-validator or zod with custom rules?"**
-A: Those are great for general-purpose validation but don't ship Taiwan-specific algorithms or accessible UI. Taiwan UI is the layer ON TOP — you can absolutely back it with zod for the schema-level work. They're complementary.
+A: Those are great for general-purpose validation but don't ship Taiwan-specific algorithms or accessible UI. Forge is the layer ON TOP — you can absolutely back it with zod for the schema-level work. They're complementary.
 
 **Q: "Why React only? What about Vue / Svelte / vanilla?"**
 A: Pragmatic — I work in React. The pure-function validators in `lib/validators/` are framework-agnostic; v0.5 roadmap covers Vue/Svelte ports as community contributions.
@@ -85,7 +85,7 @@ A: I want to ship to npm with SLSA L3 provenance from day one rather than retrof
 A: Different identifier formats, different government APIs, different regulatory contexts. Conflating them would weaken the library. v1.0+ may add a separate `@taiwan-ui/hk` package, scope kept clean.
 
 **Q: "Isn't this just a lot of work to reimplement what AI can generate?"**
-A: AI can write a TWID validator. It cannot guarantee correctness against the 戶政司 specification's edge cases, cannot ship 157 unit tests, cannot keep up with regulatory changes (e.g. 2021 ARC format change), and cannot give you the accessible UI semantics. Taiwan UI's value is the maintained-ness, not the initial generation.
+A: AI can write a TWID validator. It cannot guarantee correctness against the 戶政司 specification's edge cases, cannot ship 157 unit tests, cannot keep up with regulatory changes (e.g. 2021 ARC format change), and cannot give you the accessible UI semantics. Forge's value is the maintained-ness, not the initial generation.
 
 ## Track outcome
 

@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 import TaiwanHolidayBadge, { getHoliday } from "@/components/taiwan/TaiwanHolidayBadge";
 
 /**
- * Full-month calendar grid for Taiwan UIs.
+ * Full-month calendar grid for Forges.
  *
  * Renders 6 weeks × 7 days for any month with:
  *  - ROC year header (民國 X 年 X 月)

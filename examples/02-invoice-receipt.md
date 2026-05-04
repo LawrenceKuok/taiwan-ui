@@ -170,7 +170,7 @@ Most repeat customers want the same choice (their company tax ID, their barcode)
 
 ### 5. Government API for invoice issuance
 
-Once you have the `mode` + relevant identifier, the actual invoice issuance happens via a third-party EIP (電子發票服務平台) provider — not in the browser. Ezpay, Pay2go, Allpay, EcPay, etc. Taiwan UI handles input validation; the issuance itself is your e-invoicing provider's responsibility.
+Once you have the `mode` + relevant identifier, the actual invoice issuance happens via a third-party EIP (電子發票服務平台) provider — not in the browser. Ezpay, Pay2go, Allpay, EcPay, etc. Forge handles input validation; the issuance itself is your e-invoicing provider's responsibility.
 
 ## Real-world variants
 

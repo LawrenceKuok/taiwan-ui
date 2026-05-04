@@ -1,4 +1,4 @@
-# OCF 微補助申請書 — Taiwan UI
+# OCF 微補助申請書 — Forge
 
 > **Program**: 開放文化基金會 (OCF) 微型補助
 > **Site**: https://ocf.tw/p/microgrants/
@@ -19,7 +19,7 @@
 
 ## 一、專案名稱
 
-**Taiwan UI — 台灣本土化開源 React 元件庫**
+**Forge — 台灣本土化開源 React 元件庫**
 
 ## 二、一句話說明
 
@@ -38,7 +38,7 @@
 
 ## 四、解決方案
 
-Taiwan UI 是一套已經上線運行的開源元件庫：
+Forge 是一套已經上線運行的開源元件庫：
 
 - **21 個元件**涵蓋日期、身分驗證、地址、支付、發票、電信、金融、車輛、稅務、地圖等領域
 - **11 個純函式驗證器與計算器**（lib/validators/、lib/currency-tw.ts、lib/tax-bracket-tw.ts 等），對應戶政司、財政部、NCC、公路總局、衛福部公告規格
@@ -57,7 +57,7 @@ Taiwan UI 是一套已經上線運行的開源元件庫：
 2. **建立繁體中文文件首頁與每個元件的 zh-TW 範例頁面**（目前主要使用者語言為英文）
 3. **拍攝 5 個 1 分鐘示範影片**（每個重點元件一個），上傳 YouTube + 嵌入文件站
 4. **舉辦一次線上 g0v 社群分享會**（90 分鐘，含 30 分鐘 demo + 30 分鐘 Q&A + 30 分鐘共筆）
-5. **撰寫一份「為什麼你的台灣表單應該升級到 Taiwan UI」中文文章**，發表於 iThome / Medium / 個人部落格
+5. **撰寫一份「為什麼你的台灣表單應該升級到 Forge」中文文章**，發表於 iThome / Medium / 個人部落格
 
 ## 六、經費需求 — 共 NT$50,000
 
@@ -99,7 +99,7 @@ Taiwan UI 是一套已經上線運行的開源元件庫：
 - ⟨填入：過去 5–10 年的軟體開發經驗，例如「於上海擔任 Senior Engineer，負責⋯⋯」⟩
 - ⟨填入：相關開源/技術背景⟩
 - 2026 年起以台灣就業金卡身分長期定居台灣
-- Taiwan UI 為個人主導之開源專案，目前歡迎社群 contributor 加入
+- Forge 為個人主導之開源專案，目前歡迎社群 contributor 加入
 
 ## 十、與 OCF 使命的契合度
 
@@ -114,12 +114,12 @@ Taiwan UI 是一套已經上線運行的開源元件庫：
 ## 附件清單（隨申請書上傳）
 
 - [ ] 申請人 CV（中文，1 頁）
-- [ ] Taiwan UI 專案截圖 6 張（landing、元件列表、playground、API、CI、測試覆蓋率）
+- [ ] Forge 專案截圖 6 張（landing、元件列表、playground、API、CI、測試覆蓋率）
 - [ ] GitHub 與 Vercel 連結之超連結文件
 - [ ] 過往作品連結（若有）
 
 ## English Summary (for reviewer reference)
 
-Taiwan UI is an MIT-licensed, zero-runtime-dependency open-source React component library standardizing the Taiwan-localized form inputs (ROC calendar, TWID, tax ID, NHI card, license plate, phone, address, invoice, etc.) that every Taiwan developer reimplements. Currently 21 components, 11 pure-function validators/calculators, 157 passing tests, deployed at taiwan-ui.vercel.app.
+Forge is an MIT-licensed, zero-runtime-dependency open-source React component library standardizing the Taiwan-localized form inputs (ROC calendar, TWID, tax ID, NHI card, license plate, phone, address, invoice, etc.) that every Taiwan developer reimplements. Currently 21 components, 11 pure-function validators/calculators, 157 passing tests, deployed at taiwan-ui.vercel.app.
 
 This NT$50,000 microgrant funds the "last-mile" work — npm publication with provenance, full Traditional Chinese localization, demo videos, a g0v community talk, and a launch article — that converts a technically-complete library into one with discoverability and community traction. Aligns directly with OCF's open-culture, civic-tech, and digital-rights mission.

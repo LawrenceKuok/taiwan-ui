@@ -32,7 +32,7 @@ Building Open-Source Taiwan Form Inputs (And Why It Shouldn't Be a Government Co
 身分證驗證器可能是台灣工程師最常重複實作的一段程式碼，每個專案都會
 從 Stack Overflow 抄一份，帶著 bug 上線。
 
-我寫了 Taiwan UI——一套涵蓋 21 個本土化元件、11 個純函式驗證器、
+我寫了 Forge——一套涵蓋 21 個本土化元件、11 個純函式驗證器、
 157 筆自動化測試的開源 React 元件庫，並在過程中學到四件事：
 
 (1) 戶政司、財政部、NCC、公路總局的公告規格有哪些隱藏的邊界情境
@@ -62,7 +62,7 @@ in the Taiwanese software industry. Every project copy-pastes from Stack
 Overflow. Every project has subtle bugs. Every government procurement
 contract pays for it again.
 
-I built Taiwan UI — a 21-component, 157-test open-source React library
+I built Forge — a 21-component, 157-test open-source React library
 for Taiwan-localized form inputs — and along the way learned four things:
 
 (1) The published Taiwan government specifications hide non-obvious
@@ -126,7 +126,7 @@ Lawrence Kuok 是一位專注於前端架構與本土化基礎建設的軟體工
 擁有約 10 年產業經驗。曾於 ⟨上海公司⟩ 擔任 Senior Engineer，2026 年
 起以台灣就業金卡（科技領域）身分定居台北。
 
-主要開源專案為 Taiwan UI——一套為台灣本土化表單輸入打造的 React
+主要開源專案為 Forge——一套為台灣本土化表單輸入打造的 React
 元件庫。專案涵蓋 21 個元件、11 個純函式驗證器、157 筆自動化測試，
 對應戶政司、財政部、NCC、公路總局公告規格。
 
@@ -162,7 +162,7 @@ Based on past CFP feedback patterns:
 - ❌ "I built X" without "...and here's what you can learn"
 - ❌ Talks that are essentially the README
 
-The angle that works: "I built X. Here are the 4 hard lessons. The patterns generalize beyond Taiwan UI."
+The angle that works: "I built X. Here are the 4 hard lessons. The patterns generalize beyond Forge."
 
 That's the angle this abstract takes.
 

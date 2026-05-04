@@ -13,7 +13,7 @@ Post in `#general` channel of g0v Slack (g0v.tw/zh-TW/get-involved/, request inv
 ```
 大家好 👋
 
-我是 Lawrence，剛從上海搬來台北（金卡科技領域），在做一個開源專案叫 Taiwan UI——
+我是 Lawrence，剛從上海搬來台北（金卡科技領域），在做一個開源專案叫 Forge——
 
 把每個台灣工程師都重複實作過的東西（身分證/統編/健保卡/民國紀年/車牌/電話/地址⋯⋯）做成一套零依賴的開源 React 元件庫。MIT 授權，目前 21 個元件，11 個純函式驗證器，157 筆測試。
 
@@ -47,7 +47,7 @@ Post in `#general` channel of g0v Slack (g0v.tw/zh-TW/get-involved/, request inv
 ## Version B — Shorter / casual
 
 ```
-👋 g0v 大家好，剛搬來台北、在做開源 Taiwan UI
+👋 g0v 大家好，剛搬來台北、在做開源 Forge
 
 把身分證/統編/健保卡/民國紀年那些每個人都重複寫的驗證器做成 React 元件庫，MIT 授權、零依賴、有測試。
 

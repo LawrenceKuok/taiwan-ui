@@ -24,13 +24,13 @@ Every CV file has `⟨placeholder⟩` markers where personal information goes. *
 
 ## What's pre-filled (don't change)
 
-- Taiwan UI project description and current statistics
+- Forge project description and current statistics
 - Core philosophy / approach descriptions
 - Anything that's a fact about the public state of the repo
 
 ## Maintenance
 
 Update these whenever:
-- Taiwan UI hits a new milestone (npm publish, new component count, stars threshold)
+- Forge hits a new milestone (npm publish, new component count, stars threshold)
 - You complete a major past role at a new employer
 - Grant programs request a new format you don't already have

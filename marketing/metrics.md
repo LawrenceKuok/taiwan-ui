@@ -35,7 +35,7 @@ Update after each launch action. Goes into grant applications as evidence of tra
 
 ## Adopters (real production users)
 
-Companies / projects using Taiwan UI in production:
+Companies / projects using Forge in production:
 
 | Date | Adopter | Use case | Public proof |
 |---|---|---|---|
@@ -57,7 +57,7 @@ This list is the most valuable artifact for grant applications. Every named adop
 
 ## Quarterly summary
 
-After each quarter, post a "Q1/Q2/Q3/Q4 in Taiwan UI" update on Threads + blog. Compounding traction signal.
+After each quarter, post a "Q1/Q2/Q3/Q4 in Forge" update on Threads + blog. Compounding traction signal.
 
 Numbers to lead with:
 - New stars

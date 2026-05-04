@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { CHANGELOG } from "@/lib/changelog";
 
 export const metadata: Metadata = {
-  title: "Changelog | Taiwan UI",
-  description: "Version history and release notes for Taiwan UI.",
+  title: "Changelog | Forge",
+  description: "Version history and release notes for Forge.",
 };
 
 const TYPE_STYLES = {
@@ -27,7 +27,7 @@ export default function ChangelogPage() {
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-2">變更日誌</h1>
           <p className="text-[var(--muted)] text-sm">
-            Changelog · Version history for Taiwan UI.
+            Changelog · Version history for Forge.
           </p>
         </div>
 

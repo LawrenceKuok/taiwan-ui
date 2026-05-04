@@ -10,11 +10,11 @@
 
 ## Why I'm applying
 
-I'm a recently-arrived Taiwan Gold Card holder (Science & Technology category) building **Taiwan UI**, an open-source React component library for the Taiwan-localized form inputs every developer reimplements. I'm applying to the Anchor Taiwan fellowship because:
+I'm a recently-arrived Taiwan Gold Card holder (Science & Technology category) building **Forge**, an open-source React component library for the Taiwan-localized form inputs every developer reimplements. I'm applying to the Anchor Taiwan fellowship because:
 
 1. I've intentionally chosen to build my next project **about Taiwan, in Taiwan, for Taiwan developers** — not a generic global tool with optional Taiwan support.
 2. Going from "well-built open-source project" to "production-adopted infrastructure" requires the network and credibility that this fellowship is uniquely positioned to provide.
-3. The bilingual and bicultural nature of Anchor Taiwan's network maps directly to where Taiwan UI needs to grow — it needs both Taiwan-local credibility (g0v community, government engagement) and international visibility (so global teams hiring in Taiwan default to it).
+3. The bilingual and bicultural nature of Anchor Taiwan's network maps directly to where Forge needs to grow — it needs both Taiwan-local credibility (g0v community, government engagement) and international visibility (so global teams hiring in Taiwan default to it).
 
 ## About me
 
@@ -24,11 +24,11 @@ I'm a recently-arrived Taiwan Gold Card holder (Science & Technology category) b
 - **Move to Taiwan**: Approved Gold Card (Science & Technology), 2026
 - **Languages**: English (native/fluent), Mandarin (⟨填入程度⟩), ⟨填入其他⟩
 
-## The project — Taiwan UI
+## The project — Forge
 
 **One-line**: Open-source React component library for the Taiwan-localized form inputs every developer reimplements — ROC calendar, TWID, tax ID, NHI card, license plate, phone, address, invoice, with checksum-validating pure-function libraries underneath.
 
-**Why this matters**: Currently, every digital service in Taiwan that handles a national ID, tax number, or address either (a) integrates a buggy hand-rolled validator copy-pasted from Stack Overflow, or (b) ships a worse user experience because the engineers gave up. Taiwan UI is the equivalent of what `react-aria` or `shadcn/ui` do for general Western SaaS — but for the specific shape of Taiwan-localized data.
+**Why this matters**: Currently, every digital service in Taiwan that handles a national ID, tax number, or address either (a) integrates a buggy hand-rolled validator copy-pasted from Stack Overflow, or (b) ships a worse user experience because the engineers gave up. Forge is the equivalent of what `react-aria` or `shadcn/ui` do for general Western SaaS — but for the specific shape of Taiwan-localized data.
 
 **Current state (v0.1.0)**:
 - 21 components live at https://taiwan-ui.vercel.app
@@ -41,7 +41,7 @@ I'm a recently-arrived Taiwan Gold Card holder (Science & Technology category) b
 
 ## What I want from the fellowship
 
-I'm not raising venture capital. Taiwan UI is open-source infrastructure, not a venture-backable startup. What I'd value from Anchor Taiwan is:
+I'm not raising venture capital. Forge is open-source infrastructure, not a venture-backable startup. What I'd value from Anchor Taiwan is:
 
 1. **Local market credibility** — introductions to Taiwan engineering teams (LINE Taiwan, KKBOX, Pinkoi, iCook, Dcard, etc.) who could become flagship adopters
 2. **Government / civic-tech network** — connections to g0v core contributors, moda (數位發展部), and OCF for grant + adoption pathways
@@ -68,7 +68,7 @@ I'm not raising venture capital. Taiwan UI is open-source infrastructure, not a 
 ## Why I'm a good cohort fit
 
 - I'm not pitching a vague idea — there's a working product live. The fellowship's role is acceleration, not zero-to-one
-- I'm not optimizing for short-term VC outcomes — Taiwan UI is positioned for long-term public-good adoption, which compounds within Taiwan
+- I'm not optimizing for short-term VC outcomes — Forge is positioned for long-term public-good adoption, which compounds within Taiwan
 - I'm not relocating Taiwan as a tax arbitrage move — I'm building the kind of infrastructure that makes Taiwan a better place to ship digital products. The library only makes sense if it actually gets used inside Taiwan
 - I'm transparent about what I don't know: I don't have a strong network in Taiwan tech yet, I don't speak fluent business-Mandarin yet, I haven't navigated 政府採購 culture yet. The fellowship explicitly addresses these gaps
 

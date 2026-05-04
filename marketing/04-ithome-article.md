@@ -16,7 +16,7 @@ Submit to all 4 with slight variations.
 
 中文 (pick one):
 
-- 「停止重寫台灣驗證器：Taiwan UI 開源元件庫上線」
+- 「停止重寫台灣驗證器：Forge 開源元件庫上線」
 - 「我做了一個給每位台灣工程師的開源 React 元件庫」
 - 「為什麼我把民國紀年、身分證、統編、健保卡的驗證器全部開源了」
 
@@ -31,7 +31,7 @@ English (for dev.to / Medium English):
 ## Article body (中文 long-form)
 
 ```markdown
-# 停止重寫台灣驗證器：Taiwan UI 開源元件庫上線
+# 停止重寫台灣驗證器：Forge 開源元件庫上線
 
 如果你做過任何處理台灣使用者的數位服務，你一定寫過身分證驗證器。
 
@@ -41,9 +41,9 @@ English (for dev.to / Medium English):
 
 我把這件事修好了。
 
-## Taiwan UI 是什麼
+## Forge 是什麼
 
-Taiwan UI 是一套 MIT 授權的 React 元件庫，專為台灣本土化的表單輸入打造。
+Forge 是一套 MIT 授權的 React 元件庫，專為台灣本土化的表單輸入打造。
 
 v0.1.0（剛上線）涵蓋：
 
@@ -94,7 +94,7 @@ NCC 號碼計畫中，馬祖（0836）、烏坵（0826）、金門 082 區的電
 
 對視障與輔助科技使用者來說，這些表單就是一道隱形的「請走後門」標誌。
 
-## Taiwan UI 怎麼解這些問題
+## Forge 怎麼解這些問題
 
 ### 純函式驗證器與 React 元件分離
 
@@ -124,7 +124,7 @@ const VALID_TAX_IDS = [
 
 ### 對自身邊界的誠實
 
-Taiwan UI 公開維護一份 `GOVT_READINESS.md` 文件，**逐項列出本套件「不適合」用於哪些情境**。
+Forge 公開維護一份 `GOVT_READINESS.md` 文件，**逐項列出本套件「不適合」用於哪些情境**。
 
 例如：
 
@@ -209,7 +209,7 @@ If you've ever built software for users in Taiwan, you've written a national ID 
 
 Every Taiwanese software project does this. Every government procurement contract pays for it again. The duplicate engineering bill across the entire Taiwanese tech sector runs into millions of NTD per year.
 
-I open-sourced one library to fix this for everyone. It's called Taiwan UI.
+I open-sourced one library to fix this for everyone. It's called Forge.
 ```
 
 ---

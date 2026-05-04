@@ -1,6 +1,6 @@
 # Backers & Sponsors
 
-People and organizations supporting Taiwan UI's continued development. See [SPONSORS.md](./SPONSORS.md) for sponsorship tiers and how to support the project.
+People and organizations supporting Forge's continued development. See [SPONSORS.md](./SPONSORS.md) for sponsorship tiers and how to support the project.
 
 ## Founding sponsors
 

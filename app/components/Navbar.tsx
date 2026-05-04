@@ -26,10 +26,10 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-bold">
-            TW
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-black shadow-md shadow-orange-500/20">
+            F
           </div>
-          <span className="font-bold text-sm hidden sm:inline">台灣 UI</span>
+          <span className="font-bold text-sm hidden sm:inline tracking-tight">Forge</span>
         </Link>
 
         <div className="hidden sm:flex items-center gap-1">

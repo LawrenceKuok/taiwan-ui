@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contributing | Taiwan UI",
-  description: "How to contribute components to Taiwan UI.",
+  title: "Contributing | Forge",
+  description: "How to contribute components to Forge.",
 };
 
 export default function ContributingPage() {
@@ -12,7 +12,7 @@ export default function ContributingPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-2">貢獻指南</h1>
-          <p className="text-[var(--muted)] text-sm">Contributing · How to add components to Taiwan UI.</p>
+          <p className="text-[var(--muted)] text-sm">Contributing · How to add components to Forge.</p>
         </div>
 
         <div className="prose prose-invert max-w-none space-y-8">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "資安政策 Security | Taiwan UI",
-  description: "Security policy and vulnerability disclosure for Taiwan UI.",
+  title: "資安政策 Security | Forge",
+  description: "Security policy and vulnerability disclosure for Forge.",
 };
 
 export default function SecurityPage() {

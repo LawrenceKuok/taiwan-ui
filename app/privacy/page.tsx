@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "隱私權政策 Privacy Policy | Taiwan UI",
-  description: "Privacy policy for the Taiwan UI documentation site.",
+  title: "隱私權政策 Privacy Policy | Forge",
+  description: "Privacy policy for the Forge documentation site.",
 };
 
 const LAST_UPDATED = "2026-04-15";

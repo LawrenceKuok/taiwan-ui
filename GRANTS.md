@@ -1,6 +1,6 @@
 # Grant Funding History
 
-Public record of grant funding received by Taiwan UI. Maintained for transparency and to fulfill grant program reporting requirements.
+Public record of grant funding received by Forge. Maintained for transparency and to fulfill grant program reporting requirements.
 
 > Grant **applications** (drafts and submissions in flight) are tracked separately in [`grants/SUBMISSIONS.md`](./grants/SUBMISSIONS.md). This file lists only **approved and disbursed** funding.
 
@@ -39,7 +39,7 @@ For every grant received, this project commits to:
 
 ## Grant ethics
 
-Taiwan UI commits to:
+Forge commits to:
 
 - Not double-claiming the same deliverable across multiple grants
 - Not using grant money for personal expenses unrelated to project deliverables

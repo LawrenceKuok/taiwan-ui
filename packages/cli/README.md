@@ -1,6 +1,6 @@
 # taiwan-ui
 
-CLI for [Taiwan UI](https://taiwan-ui.vercel.app) — Taiwan-specific React components for ROC calendar, TWID validation, 統一編號, 健保卡, 車牌, phone formats, and more.
+CLI for [Forge](https://taiwan-ui.vercel.app) — Taiwan-specific React components for ROC calendar, TWID validation, 統一編號, 健保卡, 車牌, phone formats, and more.
 
 Follows the shadcn/ui model: **copies source code into your project** rather than installing as a dependency. You own the code.
 

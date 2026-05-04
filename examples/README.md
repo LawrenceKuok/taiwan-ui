@@ -1,6 +1,6 @@
 # Examples
 
-Real-world integration examples showing how to use Taiwan UI in production scenarios. Each example is intentionally minimal — focused on showing the pattern, not on being a full app.
+Real-world integration examples showing how to use Forge in production scenarios. Each example is intentionally minimal — focused on showing the pattern, not on being a full app.
 
 ## Available examples
 
@@ -26,10 +26,10 @@ Every example follows the same shape:
 
 1. **Scenario** — what real-world problem this solves
 2. **What you'll build** — the user-visible result
-3. **Components used** — the Taiwan UI pieces involved
+3. **Components used** — the Forge pieces involved
 4. **Code** — full working snippet
 5. **Notes & gotchas** — what to watch out for in production
 
 ## Contributing examples
 
-Have a real-world Taiwan UI integration story you want to share? Open a PR adding it here. Good examples come from real production code, not hypothetical "Hello World" demos. Even short snippets from your team's actual codebase (with proprietary parts redacted) are valuable.
+Have a real-world Forge integration story you want to share? Open a PR adding it here. Good examples come from real production code, not hypothetical "Hello World" demos. Even short snippets from your team's actual codebase (with proprietary parts redacted) are valuable.

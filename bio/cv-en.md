@@ -15,7 +15,7 @@
 
 ## Summary
 
-Software engineer with ~10 years of experience across PRC, North American, and now Taiwan markets. Former Senior / Staff Engineer at ⟨company⟩ in Shanghai (2022–2024). Currently leading **Taiwan UI**, an open-source React component library standardizing the Taiwan-localized form inputs every developer reimplements. Focus: front-end architecture, developer experience, and digital public infrastructure.
+Software engineer with ~10 years of experience across PRC, North American, and now Taiwan markets. Former Senior / Staff Engineer at ⟨company⟩ in Shanghai (2022–2024). Currently leading **Forge**, an open-source React component library standardizing the Taiwan-localized form inputs every developer reimplements. Focus: front-end architecture, developer experience, and digital public infrastructure.
 
 ## Selected Experience
 
@@ -29,14 +29,14 @@ Software engineer with ~10 years of experience across PRC, North American, and n
 ### Independent / Consulting — 2024–present
 
 - Recurring engagement with **ShipBob** (US e-commerce logistics) on ⟨scope⟩
-- Founder & maintainer of **Taiwan UI** (open-source)
+- Founder & maintainer of **Forge** (open-source)
 - ⟨Other engagements⟩
 
 ### ⟨Earlier roles — abbreviate or omit⟩
 
 ## Open Source
 
-### Taiwan UI — 2026–present
+### Forge — 2026–present
 
 Sole maintainer of an MIT-licensed React component library for Taiwan-localized inputs. Currently:
 
@@ -72,5 +72,5 @@ Sole maintainer of an MIT-licensed React component library for Taiwan-localized 
 
 - Keep to ONE page. Two pages won't be read by accelerator scouts or grant reviewers.
 - Quantify where possible. "Led 5-engineer team rebuilding the checkout flow, reducing cart-abandonment 12%" beats "Led team rebuilding checkout."
-- For Taiwan-context applications, lead with Taiwan UI (the most relevant). For international applications, lead with most recent senior role.
+- For Taiwan-context applications, lead with Forge (the most relevant). For international applications, lead with most recent senior role.
 - Export to PDF via Pandoc, Notion, or Google Docs. Avoid heavy templates — clean Times-style or Inter looks more credible than over-designed CVs in tech.

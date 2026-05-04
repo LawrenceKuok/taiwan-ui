@@ -1,14 +1,14 @@
-# Sponsoring Taiwan UI
+# Sponsoring Forge
 
-Taiwan UI is open-source under MIT — free to use, modify, and embed in commercial products. There's no paid tier, no enterprise edition, no consulting upsell. Everything is in the public repo.
+Forge is open-source under MIT — free to use, modify, and embed in commercial products. There's no paid tier, no enterprise edition, no consulting upsell. Everything is in the public repo.
 
 That makes sustainable maintenance the central problem.
 
-This document explains how individuals and organizations can contribute funding so the project keeps shipping. **No sponsorship is required to use Taiwan UI.** Sponsorship buys the project sustainability — not access.
+This document explains how individuals and organizations can contribute funding so the project keeps shipping. **No sponsorship is required to use Forge.** Sponsorship buys the project sustainability — not access.
 
 ## Why sponsor
 
-If your team or product depends on Taiwan UI to validate Taiwan-localized form inputs, sponsoring helps ensure:
+If your team or product depends on Forge to validate Taiwan-localized form inputs, sponsoring helps ensure:
 
 - **Continuous spec-tracking** — when 戶政司, 財政部, NCC update their published rules (e.g. the 2021 ARC format change), validators ship within days, not months
 - **Maintained CI quality** — 157+ tests stay passing, security headers stay current, dependencies stay patched
@@ -75,12 +75,12 @@ When sponsorship is active, this project commits to:
 - Custom features that aren't in the public roadmap (those are paid consulting; separate)
 - Faster issue response than the published SLA
 - Removal of `GOVT_READINESS.md` warnings about scope limitations
-- Inclusion in the project name, branding, or marketing of the Taiwan UI logo / mark (covered by trademark, not by sponsorship)
+- Inclusion in the project name, branding, or marketing of the Forge logo / mark (covered by trademark, not by sponsorship)
 - Influence over open-source decisions that conflict with the project's stated mission
 
 ## Grant program acknowledgments
 
-If Taiwan UI receives grants from Taiwan-based programs (g0v, OCF, moda, etc.), those are listed in `GRANTS.md` (separate from individual sponsorship) with grant amount, source, and what was delivered.
+If Forge receives grants from Taiwan-based programs (g0v, OCF, moda, etc.), those are listed in `GRANTS.md` (separate from individual sponsorship) with grant amount, source, and what was delivered.
 
 ---
 

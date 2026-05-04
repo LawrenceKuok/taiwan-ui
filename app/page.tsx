@@ -110,6 +110,12 @@ export default function LandingPage() {
             </span>
           </div>
 
+          <div className="animate-fade-in-up opacity-0 inline-flex items-center gap-2 mb-6">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-orange-500/20">
+              F
+            </div>
+            <span className="text-xl font-bold tracking-tight">Forge</span>
+          </div>
           <h1 className="animate-fade-in-up opacity-0 animate-delay-100 text-4xl sm:text-6xl lg:text-7xl font-bold font-serif leading-[1.1] tracking-tight">
             <span className="gradient-text">停止重寫</span>
             <br />

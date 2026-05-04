@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = "https://taiwan-ui.vercel.app";
+const SITE = "https://forge.pgintel.dev";
 
 export default function robots(): MetadataRoute.Robots {
   return {

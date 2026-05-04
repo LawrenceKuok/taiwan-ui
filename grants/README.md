@@ -1,6 +1,6 @@
 # Grant Application Drafts
 
-Self-contained proposal drafts for Taiwan grant programs that fit Taiwan UI's profile. Each is a starting point — review, customize, and submit through the program's official portal.
+Self-contained proposal drafts for Taiwan grant programs that fit Forge's profile. Each is a starting point — review, customize, and submit through the program's official portal.
 
 ## Files
 

@@ -1,6 +1,6 @@
 # Government / Enterprise Readiness — Self-Assessment
 
-This document is an **honest** evaluation of where Taiwan UI stands relative to the bar a government ministry or regulated enterprise (金管會-regulated FI, 健保署 partner, public-sector IT procurement) would actually apply.
+This document is an **honest** evaluation of where Forge stands relative to the bar a government ministry or regulated enterprise (金管會-regulated FI, 健保署 partner, public-sector IT procurement) would actually apply.
 
 Short version: the library is well-engineered for a **public-facing web form** that needs to gate input to Taiwan-specific shapes. It is **not a drop-in replacement for government identity verification**, and no one should pretend otherwise.
 
